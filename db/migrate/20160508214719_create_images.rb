@@ -6,7 +6,7 @@ class CreateImages < ActiveRecord::Migration
       t.integer :user_id
       t.text :caption
 
-      t.timestamps null: false
+      t.timestamps null: true
     end
   end
 end

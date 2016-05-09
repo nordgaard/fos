@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  drinkery_id: 1
+  start_time: 2016-05-08 16:32:36
+  end_time: 2016-05-08 16:32:36
+  deal: MyText
+
+two:
+  drinkery_id: 1
+  start_time: 2016-05-08 16:32:36
+  end_time: 2016-05-08 16:32:36
+  deal: MyText

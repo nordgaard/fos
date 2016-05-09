@@ -1,0 +1,16 @@
+<head>It's Five O'clock Somewhere!!</head>
+
+<div class="row">
+  <% @drinkeries.each do |drinkery| %>
+  <div class="col-md-3">
+    <div class="thumbnail">
+      <a href="/drinkeries/<%= drinkery.id %>">
+        <p><%= drinkery.name %></p>
+        <p><%= drinkery.address_1 %></p>
+        <p><%= drinkery.city %></p>
+      </a>
+    </div>
+  </div>
+  <% end %>
+</div>
+

@@ -1,0 +1,2 @@
+class HappyHoursController < ApplicationController
+end

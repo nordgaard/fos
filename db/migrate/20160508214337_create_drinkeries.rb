@@ -12,7 +12,7 @@ class CreateDrinkeries < ActiveRecord::Migration
       t.integer :open_hour
       t.integer :close_hour
 
-      t.timestamps null: false
+      t.timestamps null: true
     end
   end
 end
