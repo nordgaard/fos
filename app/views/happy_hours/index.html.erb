@@ -1,0 +1,14 @@
+<head>Look at all these Happy Hours!!!</head>
+
+<div class="row">
+  <% @happy_hours.each do |happy_hours| %>
+  <div class="col-md-3">
+    <div class="thumbnail">
+      <a href="/happy_hours/<%= happy_hours.id %>">
+        <p><%= happy_hours.deal %></p>
+        <p><%= happy_hours.day_of_week %></p>
+      </a>
+    </div>
+  </div>
+  <% end %>
+</div>

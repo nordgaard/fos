@@ -1,0 +1,13 @@
+  <h1>Details of this Drinking Establishment!!</h1>
+
+<p>Name: <%= @drinkery.name %></p>
+<p>Address: <%= @drinkery.address_1 %></p>
+<p>City: <%= @drinkery.city %></p>
+
+  <h2>Add this to Your Cart!</h>
+  <%= form_tag "/user_drinks", method: :post do %>
+  <%= hidden_field_tag :drinkery_id, @drinkery.id %>
+  <%= submit_tag "Add To Cart" %>
+<% end %>
+  <%= link_to "Destroy", "/drinkeries/#{@drinkery.id}", method: :delete %>
+ 

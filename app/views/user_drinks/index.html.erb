@@ -1,0 +1,19 @@
+<head>Bar Matches</head>
+
+<table class="table">
+  <tr>
+    <th>User ID</th>
+    <th>User First Name</th>
+    <th>Drinkery ID</th>
+    <th>Drinkery</th>
+  </tr>
+  <% @user_drinks.each do |user_drink| %>
+    <tr>
+      <td><%= user_drink.user_id %></td>
+      <td><%= user_drink.user.first_name %></td>
+      <td><%= user_drink.drinkery_id %></td>
+      <td><%= user_drink.drinkery.name %></td>
+
+    </tr>
+  <% end %>
+</table>
