@@ -11,24 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160512042526) do
+ActiveRecord::Schema.define(version: 20160519032918) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "drinkeries", force: :cascade do |t|
+  create_table "categories", force: :cascade do |t|
     t.string   "name"
-    t.string   "address_1"
-    t.string   "address_2"
-    t.string   "city"
-    t.string   "state"
-    t.integer  "zip"
-    t.integer  "phone"
-    t.string   "website"
-    t.integer  "open_hour"
-    t.integer  "close_hour"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "categorized_locations", force: :cascade do |t|
+    t.string   "location_id"
+    t.string   "category_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "happy_hours", force: :cascade do |t|
@@ -36,22 +34,34 @@ ActiveRecord::Schema.define(version: 20160512042526) do
     t.string   "day_of_week"
     t.integer  "start_hour"
     t.integer  "end_hour"
-    t.integer  "drinkery_id"
+    t.integer  "location_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "images", force: :cascade do |t|
     t.string   "image_url"
-    t.integer  "drinkery_id"
+    t.integer  "location_id"
     t.integer  "user_id"
     t.text     "caption"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+  create_table "locations", force: :cascade do |t|
+    t.string   "name"
+    t.string   "address"
+    t.string   "city"
+    t.string   "state"
+    t.integer  "zip"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "open_hour"
+    t.integer  "close_hour"
+  end
+
   create_table "user_drinks", force: :cascade do |t|
-    t.integer  "drinkery_id"
+    t.integer  "location_id"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"

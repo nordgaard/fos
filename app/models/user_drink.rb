@@ -1,4 +1,4 @@
 class UserDrink < ActiveRecord::Base
-  belongs_to :drinkery
+  belongs_to :location
   belongs_to :user
 end

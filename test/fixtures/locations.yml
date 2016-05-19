@@ -2,24 +2,14 @@
 
 one:
   name: MyString
-  address_1: MyString
-  address_2: MyString
+  address: MyString
   city: MyString
   state: MyString
   zip: 1
-  phone: 1
-  website: MyString
-  open_hour: 1
-  close_hour: 1
 
 two:
   name: MyString
-  address_1: MyString
-  address_2: MyString
+  address: MyString
   city: MyString
   state: MyString
   zip: 1
-  phone: 1
-  website: MyString
-  open_hour: 1
-  close_hour: 1

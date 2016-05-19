@@ -6,7 +6,7 @@ class UserDrinksController < ApplicationController
   end
 
   def create
-    user_drink = UserDrink.new(user_id: current_user.id, drinkery_id: params[:drinkery_id])
+    user_drink = UserDrink.new(user_id: current_user.id, location_id: params[:location_id])
     user_drink.save
     redirect_to "/user_drinks"
   end
