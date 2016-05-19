@@ -1,12 +1,32 @@
 <head>Look at all these Happy Hours!!!</head>
 
+<a href="/locations?sort=name">Sort by Name</a>
+<a href="/locations/random">Random Items</a>
+
+<%= form_tag "/search", method: :post do %>
+<%= label_tag :user_search, "Search" %>
+<%= text_field_tag :user_search %>
+<%= submit_tag "Search" %>
+    <% end %>
+
+<ul>
+  <% Category.all.each do |category| %>
+    <li><%= link_to category.name, "/products?category=#{category.name}" %></li>
+  <% end %>
+</ul>
+
+
+
 <div class="row">
-  <% @happy_hours.each do |happy_hours| %>
+  <% @products.each do |product| %>
   <div class="col-md-3">
     <div class="thumbnail">
-      <a href="/happy_hours/<%= happy_hours.id %>">
-        <p><%= happy_hours.deal %></p>
-        <p><%= happy_hours.day_of_week %></p>
+      <a href="/products/<%= product.id %>">
+        <p><%= product.name %></p>
+        <p><%= number_to_currency(product.price)  %></p>
+        <div>
+          <img src="<%= product.image_url %>" width="200" height="200">
+        </div>
       </a>
     </div>
   </div>

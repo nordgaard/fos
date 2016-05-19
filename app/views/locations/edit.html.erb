@@ -1,0 +1,44 @@
+<h1>Update an Existing Location!</h1>
+
+<% if @location && @location.errors.any? %>
+<ul>
+  <% @location.errors.full_messages.each do |message| %>
+  <li ><%= message %></li>
+  <% end %>
+</ul>
+
+<% end %>
+<%= form_tag '/locations', method: :patch do %>
+
+<div>
+  <%= label_tag :name %>
+  <%= text_field_tag :name, @location.name%>
+</div>
+<div>
+  <%= label_tag :address %>
+  <%= text_field_tag :address, @location.address %>
+</div>
+<div>
+  <%= label_tag :city %>
+  <%= text_field_tag :city, @location.city %>
+</div>
+<div>
+  <%= label_tag :state %>
+  <%= text_field_tag :state, @location.state %>
+</div>
+<div>
+  <%= label_tag :zip %>
+  <%= text_field_tag :zip, @location.zip %>
+</div>
+<div>
+ <%= label_tag :open_hour %>
+ <%= text_field_tag :open_hour, @location.open_hour%>
+</div>
+
+<div>
+ <%= label_tag :close_hour %>
+ <%= text_field_tag :close_hour, @location.close_hour%>
+</div>
+<%= submit_tag "Add location" %>
+
+<% end %>

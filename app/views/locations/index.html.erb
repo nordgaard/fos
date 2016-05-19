@@ -1,0 +1,16 @@
+<div class="row">
+  <% @locations.each do |location| %>
+  <div class="col-md-3">
+    <div class="thumbnail">
+      <a href="/locations/<%= location.id %>">
+        <p><%= location.name %></p>
+        <p><%= location.address %></p>
+        <p><%= location.city %></p>
+        <a href="/locations/<%= location.id %>" title="View location"><img src="<%= location.images.first.image_url %>"  alt="<%= location.name %>" class="img-responsive location_single_image"></a>
+      </a>
+    </div>
+  </div>
+  <% end %>
+</div>
+
+<!-- No user can enter in locations -->
