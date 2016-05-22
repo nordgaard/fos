@@ -6,7 +6,7 @@
         <p><%= location.name %></p>
         <p><%= location.address %></p>
         <p><%= location.city %></p>
-        <a href="/locations/<%= location.id %>" title="View location"><img src="<%= location.images.first.image_url %>"  alt="<%= location.name %>" class="img-responsive location_single_image"></a>
+        <a href="/locations/<%= location.id %>" title="View location"><img src="<%= location.show_image %>" class="img-responsive location_single_image"></a>
       </a>
     </div>
   </div>

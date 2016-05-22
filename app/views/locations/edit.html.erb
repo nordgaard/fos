@@ -8,7 +8,7 @@
 </ul>
 
 <% end %>
-<%= form_tag '/locations', method: :patch do %>
+<%= form_tag "/locations/#{@location.id}", method: :patch do %>
 
 <div>
   <%= label_tag :name %>
@@ -39,6 +39,6 @@
  <%= label_tag :close_hour %>
  <%= text_field_tag :close_hour, @location.close_hour%>
 </div>
-<%= submit_tag "Add location" %>
+<%= submit_tag "Edit location" %>
 
 <% end %>
