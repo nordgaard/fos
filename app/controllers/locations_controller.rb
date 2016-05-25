@@ -2,7 +2,14 @@ class LocationsController < ApplicationController
 
 
   def index
-    @locations = Location.all
+        sort_choice = params[:sort]
+         puts "sort choice?"
+         p sort_choice
+         if sort_choice
+           @locations = Location.order(sort_choice)
+         else
+           @locations = Location.all
+         end
   end
 
 
@@ -50,7 +57,7 @@ class LocationsController < ApplicationController
 
   def search
     search_term = params[:user_search]
-    @locations = location.where("name LIKE ? OR address LIKE ?", "%#{search_term}%", "%#{search_term}%")
+    @locations = Location.where("name LIKE ? OR address LIKE ?", "%#{search_term}%", "%#{search_term}%")
     render :index
   end
 end

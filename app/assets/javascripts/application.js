@@ -11,13 +11,11 @@
 // about supported directives.
 //
 //= require_tree .
-//= require jquery
-//= require bootstrap-sprockets
+//= require theme/jquery
+//= require theme/bootstrap
 //= require jquery_ujs
 //= require turbolinks
-//= require theme/bootstrap
 //= require theme/contact_me
-//= require theme/jquery
 //= require theme/background
 //= require theme/core
 //= require theme/transition

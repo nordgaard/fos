@@ -11,22 +11,19 @@
 
 <ul>
   <% Category.all.each do |category| %>
-    <li><%= link_to category.name, "/products?category=#{category.name}" %></li>
+    <li><%= link_to category.name, "/happy_hours?category=#{category.name}" %></li>
   <% end %>
 </ul>
 
 
 
 <div class="row">
-  <% @products.each do |product| %>
+  <% @happy_hours.each do |happy_hour| %>
   <div class="col-md-3">
     <div class="thumbnail">
-      <a href="/products/<%= product.id %>">
-        <p><%= product.name %></p>
-        <p><%= number_to_currency(product.price)  %></p>
-        <div>
-          <img src="<%= product.image_url %>" width="200" height="200">
-        </div>
+      <a href="/happy_hours/<%= happy_hour.id %>">
+        <p><%= happy_hour.deal %></p>
+      
       </a>
     </div>
   </div>

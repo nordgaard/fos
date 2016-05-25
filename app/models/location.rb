@@ -9,7 +9,7 @@ class Location < ActiveRecord::Base
     if images.first
       return images.first.image_url
     else
-      return Image.find(11)
+      return Image.find(11).image_url
     end
   end
 end
