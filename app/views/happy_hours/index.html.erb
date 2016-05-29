@@ -1,21 +1,13 @@
 <head>Look at all these Happy Hours!!!</head>
 
-<a href="/locations?sort=name">Sort by Name</a>
-<a href="/locations/random">Random Items</a>
-
 <%= form_tag "/search", method: :post do %>
 <%= label_tag :user_search, "Search" %>
 <%= text_field_tag :user_search %>
 <%= submit_tag "Search" %>
     <% end %>
-
-<ul>
-  <% Category.all.each do |category| %>
-    <li><%= link_to category.name, "/happy_hours?category=#{category.name}" %></li>
-  <% end %>
-</ul>
-
-
+    
+<a href="/locations?sort=city">Sort by City</a>
+<a href="/locations?sort=name">Sort by Name</a>
 
 <div class="row">
   <% @happy_hours.each do |happy_hour| %>
@@ -23,9 +15,16 @@
     <div class="thumbnail">
       <a href="/happy_hours/<%= happy_hour.id %>">
         <p><%= happy_hour.deal %></p>
+        <p><%= happy_hour.location.name %></p>
       
       </a>
     </div>
   </div>
   <% end %>
 </div>
+
+
+
+
+
+

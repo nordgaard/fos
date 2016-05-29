@@ -5,6 +5,9 @@ class HappyHoursController < ApplicationController
 
   def show
     @happy_hour = HappyHour.find_by(id: params[:id])
+    @user = current_user
+    @location = Location.find_by(id: params[:id])
+
   end
 
     def search

@@ -1,21 +1,16 @@
-<h1>These are the current Happy Hours</h1>
+<h1>These are your Drink Destinations!</h1>
 
 <table class="table">
   <tr>
-      <th>Drinkery Name</th>
-      <th>Location</th>
-      <th>City</th>
-      <!-- <th>See the deals!</th> -->
-<!--     <th>Remove From Happy Hour List</th>
--->  </tr>
-<% @user_drinks.each do |user_drink| %>
-<tr>
-  <td><%= user_drink.location.name %></td>
-  <td><%= user_drink.location.address%></td>
-  <td><%= user_drink.location.city%></td>
-  <!-- <td><#%= #user_drink.user.first_name%></td> -->
-<!-- #link_to "See Happy Hour Deal", "/happy_hours/#{happy_hour.id}"
-  #link_to "Remove location", "/user_drinks/#{user_drink.id}", method: :delete -->
-</tr>
-<% end %>
+    <th>Drinkery</th>
+    <th>Location</th>
+    <th>Remove From Happy Hour List</th>
+  </tr>
+  <% @user_drinks.each do |user_drink| %>
+  <tr>
+    <td><%= user_drink.location.name%></td>
+    <td><%= user_drink.location.address%></td>
+    <td><%= link_to "Remove the Booze!", "/user_drinks/#{user_drink.id}", method: :delete %></td>
+  </tr>
+  <% end %>
 </table>

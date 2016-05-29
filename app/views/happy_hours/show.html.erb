@@ -3,4 +3,13 @@
 
 <p>Name: <%= @happy_hour.deal %></p>
 <p>Location: <%= @happy_hour.location.name %></p>
+<p>Day of the Week: <%= @happy_hour.day_of_week %></p>
+<p>Start Drinking: <%= @happy_hour.start_hour%></p>
+<p>Closin' Time: <%= @happy_hour.end_hour %></p>
 
+  <h1>Add this place to your Happy Hour list!!</h1>
+  <%= form_tag "/user_drinks", method: :post do %>
+  <%= hidden_field_tag :user_id, @user.id %>
+  <%= hidden_field_tag :location_id, @location.id %>
+  <%= submit_tag "Add To HH List" %>
+  <% end %>

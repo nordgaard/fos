@@ -1,0 +1,14 @@
+<div class="row">
+  <% @user_drinks.each do |user_drink| %>
+  <div class="col-md-3 spacing">
+    <div class="thumbnail">
+      <a href="/user_drinks/<%= user_drink.location.id %>">
+        <p><%= user_drink.location.name %></p>
+        <p><%= user_drink.location.address %></p>
+        <p><%= user_drink.location.city %></p>
+        <a href="/user_drinks/<%= user_drink.location.id %>" title="View user_drink"> <img src="<%= user_drink.location.show_image %> class="img-responsive"></a>
+      </a>
+    </div>
+  </div>
+  <% end %>
+</div>

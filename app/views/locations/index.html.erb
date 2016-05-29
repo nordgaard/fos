@@ -3,17 +3,35 @@
 <a href="/locations?sort=city">Sort by City</a>
 <a href="/locations?sort=name">Sort by Name</a>
 
+<%= form_tag "/search", method: :post do %>
+<%= label_tag :user_search, "Search" %>
+<%= text_field_tag :user_search %>
+<%= submit_tag "Search" %>
+    <% end %>
+
 <div class="row">
   <% @locations.each do |location| %>
-  <div class="col-md-3">
+  <div class="col-md-3 spacing">
     <div class="thumbnail">
       <a href="/locations/<%= location.id %>">
         <p><%= location.name %></p>
         <p><%= location.address %></p>
         <p><%= location.city %></p>
-        <a href="/locations/<%= location.id %>" title="View location"><img src="<%= location.show_image %>" class="img-responsive location_single_image"></a>
+        <a href="/locations/<%= location.id %>" title="View location"> <img src="<%= location.show_image %> class="img-responsive"></a>
       </a>
     </div>
   </div>
   <% end %>
 </div>
+
+<% @locations.each_with_index do |location, index| %>
+                <% if index + 1 == 1 || (index + 1) % 4 == 0 %>
+                    <div class="row">
+                <% end %>
+                        <div class="service">
+                            <div class="col-md-3 col-sm-6">
+                        </div>
+                <% if (index + 1) % 4 == 0 %>
+                    </div>
+                <% end %>
+            <% end %>

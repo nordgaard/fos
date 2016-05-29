@@ -1,5 +1,5 @@
 class LocationsController < ApplicationController
-
+  before_action :authenticate_user!, except: [:index, :show]
 
   def index
         sort_choice = params[:sort]
@@ -15,6 +15,7 @@ class LocationsController < ApplicationController
 
   def show
     @location = Location.find_by(id: params[:id])
+    @user = current_user
   end
 
 

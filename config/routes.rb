@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users, :controllers => { :registrations => "users/registrations" }
 
-  root to: 'locations#index'
+  root to: 'welcomes#index'
 
+  get '/user_fav_locations', to: "user_drinks#user_fav_locations"
   resources :users
   resources :categorized_locations
   resources :categories
@@ -10,5 +11,7 @@ Rails.application.routes.draw do
   resources :locations
   resources :user_drinks
   resources :images
+  resources :welcomes
+
 
 end
