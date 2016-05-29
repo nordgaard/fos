@@ -10,11 +10,11 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require_tree .
+//= require jquery
+//= require jquery_ujs
+//= require bootstrap-sprockets
 //= require theme/jquery
 //= require theme/bootstrap
-//= require jquery_ujs
-//= require turbolinks
 //= require theme/contact_me
 //= require theme/background
 //= require theme/core
@@ -29,3 +29,6 @@
 //= require theme/retina
 //= require theme/wow
 //= require theme/vitality
+//= require angular.min
+//= require app
+//= require_tree .

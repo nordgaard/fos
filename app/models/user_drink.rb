@@ -9,6 +9,5 @@ class UserDrink < ActiveRecord::Base
     if UserDrink.where('user_id = ? AND location_id = ?', user_id, location_id).any?
       errors.add(:location, "You have already liked this location, pick another")
     end
-    
   end
 end
