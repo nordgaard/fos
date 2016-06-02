@@ -3,7 +3,11 @@ class UserDrinksController < ApplicationController
 
   
   def index
-    @user_drinks = current_user.user_drinks
+    # if current_user.user_drinks.user_id?
+      @user_drinks = current_user.user_drinks
+    # else
+      # "You need to find some locations!"
+  # end
   end
 
   def create

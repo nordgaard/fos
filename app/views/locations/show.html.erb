@@ -5,10 +5,16 @@
   <p>City: <%= @location.city %></p>
   <p>Latitude: <%= @location.latitude %></p>
   <p>Longitude: <%= @location.longitude %></p>
+<!-- 
+  <#% @location.images.each do |image| %>
+    <img src="<#%= image.image_url %>" class="img-responsive">
+ <#% end %> -->
 
-  <% @location.images.each do |image| %>
-    <img src="<%= image.image_url %>" class="img-responsive">
- <% end %>
+<p>
+  <%= image_tag @location.image_url(:thumb).to_s %>
+</p>
+
+
 
   <h1>Add this place to your Happy Hour list!!</h1>
   <%= form_tag "/user_drinks", method: :post do %>

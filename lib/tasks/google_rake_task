@@ -1,8 +1,0 @@
-namespace :custom_rake_tasks do
-  task :generate_google_places_information do
-    locations = Location.all
-    locations.each do |location|
-      contact.update(middle_name: Faker::Name.first_name)
-    end
-  end
-end

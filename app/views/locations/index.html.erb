@@ -1,12 +1,25 @@
-<div ng-app="app">
-<div ng-controller="locationCtrl">
-<h1>Locations</h1>
+<head>Look at all these Drinkeries!!!</head>
+
+<%= form_tag "/search", method: :post do %>
+<%= label_tag :user_search, "Search" %>
+<%= text_field_tag :user_search %>
+<%= submit_tag "Search" %>
+    <% end %>
+    
+<a href="/locations?sort=city">Sort by City</a>
+<a href="/locations?sort=name">Sort by Name</a>
 
 <div class="row">
-  <div class="col-md-3" ng-repeat-start="element in array">
-  {{element}}
+  <% @locations.each do |location| %>
+  <div class="col-md-3">
+    <div class="thumbnail">
+      <a href="/locations/<%= location.id %>">
+        <p><%= location.name %></p>
+        <div>
+          <img src="https://support.files.wordpress.com/2009/07/pigeony.jpg?w=688" width="200" height="200">
+        </div>
+      </a>
+    </div>
   </div>
-  <div class="clearfix" ng-if="($index + 1) % 4 == 0"></div>
-  <div ng-repeat-end=""></div>
+  <% end %>
 </div>
-

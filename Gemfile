@@ -19,12 +19,14 @@ gem 'yelp', require: 'yelp'
 gem 'carrierwave'
 gem 'fog'
 gem 'figaro'
+gem 'mini_magick'
 gem 'google_places'
 gem 'bootstrap-sass'
 gem 'font-awesome-rails'
 gem 'faker'
 gem 'thematic'
 gem 'geocoder'
+gem 'dotenv-rails', :groups => [:development, :test]
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
