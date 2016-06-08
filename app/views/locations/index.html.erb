@@ -1,23 +1,14 @@
-<head>Look at all these Drinkeries!!!</head>
+<div ng-app="app">
+  <div ng-controller="locationCtrl", ng-init="setup()">
 
-<%= form_tag "/search", method: :post do %>
-<%= label_tag :user_search, "Search" %>
-<%= text_field_tag :user_search %>
-<%= submit_tag "Search" %>
-    <% end %>
-    
-<a href="/locations?sort=city">Sort by City</a>
-<a href="/locations?sort=name">Sort by Name</a>
+    <head>Look at all these Drinkeries!!!</head>
 
 <div class="row">
   <% @locations.each do |location| %>
   <div class="col-md-3">
     <div class="thumbnail">
       <a href="/locations/<%= location.id %>">
-        <p><%= location.name %></p>
-        <div>
-          <img src="https://support.files.wordpress.com/2009/07/pigeony.jpg?w=688" width="200" height="200">
-        </div>
+        <p><%= location.name %></p>      
       </a>
     </div>
   </div>

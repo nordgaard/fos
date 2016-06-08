@@ -10,4 +10,12 @@ class UserDrink < ActiveRecord::Base
       errors.add(:location, "You have already liked this location, pick another")
     end
   end
+
+def ud_location_name
+  if location 
+    return location.name
+  else
+    "No Location"
+  end
+end
 end

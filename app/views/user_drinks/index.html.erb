@@ -2,17 +2,12 @@
 
 <table class="table">
   <tr>
-    <!-- <th>Deal</th> -->
     <th>Drinkery</th>
-    <th>Location</th>
     <th>Remove From Happy Hour List</th>
   </tr>
   <% @user_drinks.each do |user_drink| %>
   <tr>
-    <!-- <td><%#= #enter deal  here %></td> -->
-    <td><%= user_drink.location.name%></td>
-    <td><%= user_drink.location.name%></td>
-    <td><%= user_drink.location.address%></td>
+    <td><a href="/locations/<%= user_drink.location.id %>"><%= user_drink.ud_location_name%></a></td>
     <td><%= link_to "Remove the Booze!", "/user_drinks/#{user_drink.id}", method: :delete %></td>
   </tr>
   <% end %>

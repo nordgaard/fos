@@ -1,18 +1,11 @@
-  <h1>Details of this Drinking Establishment!!</h1>
+  <h1>Details of this Location</h1>
 
   <p>Name: <%= @location.name %></p>
-  <p>Address: <%= @location.address %></p>
-  <p>City: <%= @location.city %></p>
-  <p>Latitude: <%= @location.latitude %></p>
-  <p>Longitude: <%= @location.longitude %></p>
-<!-- 
-  <#% @location.images.each do |image| %>
-    <img src="<#%= image.image_url %>" class="img-responsive">
- <#% end %> -->
-
-<p>
-  <%= image_tag @location.image_url(:thumb).to_s %>
-</p>
+  <p>Latitude: <%= @location.lat %></p>
+  <p>Longitude: <%= @location.lng %></p>
+  <p>
+    <%= image_tag @location.image_url(:thumb).to_s %>
+  </p>
 
 
 
@@ -25,3 +18,17 @@
   <%= link_to "Destroy", "/locations/#{@location.id}", method: :delete %>
   <%= link_to "Update", "/locations/#{@location.id}/edit", method: :get %>
 
+<!-- Other available happy hours for this location -->
+
+<!-- <div class="row">
+  <%# @happy_hours.each do |happy_hour| %>
+  <%#= if happy_hour.location_id == #add the location id from the current page %>      
+  <div class="col-md-3">
+    <div class="thumbnail">
+      <a href="/happy_hours/<%#=# happy_hour.id %>">
+        <p><%#= happy_hour.deal %></p>      
+      </a>
+    </div>
+  </div>
+  <#% #end %> -->
+<!-- #<#/div> -->

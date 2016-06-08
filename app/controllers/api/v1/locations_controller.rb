@@ -1,9 +1,7 @@
-class LocationsController < ApplicationController
-  before_action :authenticate_user!, except: [:index]
-
+class Api::V1::LocationsController < ApplicationController
   def location_params
-    params.require(:location).permit(:name, :image)
-  end
+  params.require(:location).permit(:name, :image)
+end
 
 
   def index

@@ -9,6 +9,8 @@ class Location < ActiveRecord::Base
 
   validate :do_not_repeat_coordinates
   validate :place_id_is_unique
+  validate :delete_update_is_admin
+
 
   def do_not_repeat_coordinates
     if Location.where('lng = ? AND lat = ?', lng, lat).any?
@@ -23,6 +25,12 @@ class Location < ActiveRecord::Base
   end
 end
 
+def delete_update_is_admin
+  if User.where('admin = ?', admin).false
+
+end
+
+end
 #   def show_image
 #     if images.first
 #       return images.first.image_url

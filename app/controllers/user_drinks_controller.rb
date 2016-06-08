@@ -25,4 +25,6 @@ class UserDrinksController < ApplicationController
   def user_fav_locations
     @user_drinks = current_user.user_drinks
   end
+
+
 end
