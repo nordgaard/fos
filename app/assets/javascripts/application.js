@@ -13,8 +13,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap-sprockets
-//= require theme/jquery
-//= require theme/bootstrap
+//= require angular.min
+//= require app
+//= require_tree .
 //= require theme/contact_me
 //= require theme/background
 //= require theme/core
@@ -29,6 +30,4 @@
 //= require theme/retina
 //= require theme/wow
 //= require theme/vitality
-//= require angular.min
-//= require app
-//= require_tree .
+

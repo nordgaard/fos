@@ -18,15 +18,6 @@
  *= require theme/owl.carousel
  *= require theme/owl.theme
  *= require theme/owl.transitions
- *= require theme/vitality-aqua
  *= require theme/vitality-blue
- *= require theme/vitality-green
- *= require theme/vitality-orange
- *= require theme/vitality-pink
- *= require theme/vitality-purple
- *= require theme/vitality-red
- *= require theme/vitality-tan
- *= require theme/vitality-turquoise
- *= require theme/vitality-yellow
  *= require_tree .
  */
