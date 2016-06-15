@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title><i class="fa fa-beer" aria-hidden="true"></i>Happy Hour!</title>
+<!--    <a class="navbar-brand" href="#"><i class="fa fa-beer" aria-hidden="true"></i></a>
+-->  <title>Happy Hour!</title>
+<%= Gon::Base.render_data %>
 <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-  <link href='https://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Peralta' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Alfa+Slab+One' rel='stylesheet' type='text/css'>
+<%= csrf_meta_tags %>
+<link href='https://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Peralta' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Alfa+Slab+One' rel='stylesheet' type='text/css'>
 </head>
 
 <body id="page-top" class="modern">
@@ -48,51 +50,51 @@
        </ul>
      </div><!-- /.navbar-collapse -->
    </div><!-- /.container-fluid -->
-</nav>
+ </nav>
 
-<!-- scrolling images -->
-
-
+ <!-- scrolling images -->
 
 
 
 
 
 
-   <%= yield %>
-   <footer class="footer" style="background-image: url('assets/images/theme/bg-footer.jpg')">
-    <div class="container text-center">
-      <div class="row">
-          <div class="col-md-6 contact-details">
-            <h4><i class="fa fa-ambulance"></i> Need a Break from Drinking?</h4>
-            <p><a href="http://www.recovery.org/topics/addiction-recovery-helplines/">Seek Help</a>
-            </p>
-          </div>         <div class="col-md-6 contact-details">
-            <h4><i class="fa fa-envelope"></i> We Want to Hear from You!</h4>
-            <p><a href="mailto:jenordgaard@gmail.com">Email Here</a>
-            </p>
-          </div>
-        </div>
-        <div class="row social">
-          <div class="col-lg-12">
-            <ul class="list-inline">
-              <li><a href="#"><i class="fa fa-facebook fa-fw fa-2x"></i></a>
-              </li>
-              <li><a href="#"><i class="fa fa-twitter fa-fw fa-2x"></i></a>
-              </li>
-              <li><a href="#"><i class="fa fa-linkedin fa-fw fa-2x"></i></a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="row copyright">
-          <div class="col-lg-12">
-            <p class="small">Created by Jens Nordgaard</p>
-            <i class="fa fa-jpy" aria-hidden="true"></i>
-          </div>
-        </div>
-      </div>
-    </footer>
 
-  </body>
-  </html>
+
+ <%= yield %>
+ <footer class="footer" style="background-image: url('assets/images/theme/bg-footer.jpg')">
+  <div class="container text-center">
+    <div class="row">
+      <div class="col-md-6 contact-details">
+        <h4><i class="fa fa-ambulance"></i> Need a Break from Drinking?</h4>
+        <p><a href="http://www.recovery.org/topics/addiction-recovery-helplines/">Seek Help</a>
+        </p>
+      </div>         <div class="col-md-6 contact-details">
+      <h4><i class="fa fa-envelope"></i> We Want to Hear from You!</h4>
+      <p><a href="mailto:jenordgaard@gmail.com">Email Here</a>
+      </p>
+    </div>
+  </div>
+  <div class="row social">
+    <div class="col-lg-12">
+      <ul class="list-inline">
+        <li><a href="#"><i class="fa fa-facebook fa-fw fa-2x"></i></a>
+        </li>
+        <li><a href="#"><i class="fa fa-twitter fa-fw fa-2x"></i></a>
+        </li>
+        <li><a href="#"><i class="fa fa-linkedin fa-fw fa-2x"></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="row copyright">
+    <div class="col-lg-12">
+      <p class="small">Created by Jens Nordgaard</p>
+      <i class="fa fa-jpy" aria-hidden="true"></i>
+    </div>
+  </div>
+</div>
+</footer>
+
+</body>
+</html>

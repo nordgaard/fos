@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   root to: 'welcomes#index'
 
   get '/user_fav_locations', to: "user_drinks#user_fav_locations"
+  get '/maps', to: "maps#index"
   resources :users
   resources :categorized_locations
   resources :categories

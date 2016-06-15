@@ -26,6 +26,7 @@ gem 'font-awesome-rails'
 gem 'faker'
 gem 'thematic'
 gem 'geocoder'
+gem 'gon'
 gem 'dotenv-rails', :groups => [:development, :test]
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
