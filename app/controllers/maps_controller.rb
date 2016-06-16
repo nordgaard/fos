@@ -1,7 +1,7 @@
 class MapsController < ApplicationController
 
   def index
-    @locations = Location.first(20)
+    @locations = Location.all
     gon.locations = @locations 
   end
 

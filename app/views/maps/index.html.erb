@@ -1,28 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <div class="map">
   <script src="http://maps.googleapis.com/maps/api/js"></script>
   <script>
     function initialize() {
 
       var mapProp = {
-        center:new google.maps.LatLng(51.508742,-0.120850),
-        zoom:5,
+        center:new google.maps.LatLng(37.752191, -122.447335),
+        zoom:10,
         mapTypeId:google.maps.MapTypeId.ROADMAP
       };
+
       var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
 
 
       for (var i = 0; i < gon.locations.length; i++) {
+        var infowindow = new google.maps.InfoWindow({
+            content: '<a href="/locations/' + gon.locations[i].id + '">' + gon.locations[i].name + '</a>'
+        });
         var marker = new google.maps.Marker({
           position: {lat: gon.locations[i].lat , lng: gon.locations[i].lng },
           map: map,
-          label: gon.locations[i].name
+          infowindow: infowindow
+        });
+        google.maps.event.addListener(marker, 'click', function() {
+          this.infowindow.open(map, this);
         });
       }
     }
     google.maps.event.addDomListener(window, 'load', initialize);
   </script>
+  </div>
 </head>
 
 <body>

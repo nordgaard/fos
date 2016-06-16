@@ -1,16 +1,18 @@
-<div ng-app="app">
-  <div ng-controller="locationCtrl", ng-init="setup()">
 
+<div ng-app="app" ng-controller="locationCtrl" ng-init = "setup()"> 
     <head>Look at all these Drinkeries!!!</head>
 
-<div class="row">
-  <% @locations.each do |location| %>
-  <div class="col-md-3">
-    <div class="thumbnail">
-      <a href="/locations/<%= location.id %>">
-        <p><%= location.name %></p>      
-      </a>
-    </div>
-  </div>
-  <% end %>
+<table>
+  <tr>
+    <th>Location Name</th>
+    <th>Latitude</th>
+    <th>Longitude</th>
+  </tr>
+  <tr ng-repeat="location in locations">
+    <td>{{ location.name }}</td>
+    <td>{{ location.lat }}</td>
+    <td>{{ location.lng }}</td>
+  </tr>
+</table>
+
 </div>
