@@ -31,10 +31,10 @@ def create
   coordinates = Geocoder.coordinates(address)
   @location = Location.new(name: location.name, place_id: location.place_id, lat: location.lat, lng: location.lng, icon: location.icon)
   if @location.save
-    flash[:success] = "You have listed a new drinkery!!"
+    render :show
     redirect_to "/locations/#{@location.id}"
   else
-    render :new
+    render json: {errors: @location.errors.full_messages}, status: 422
   end
 end
 

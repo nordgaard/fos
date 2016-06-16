@@ -7,13 +7,13 @@
         $scope.locations = response.data;
       });
     }
-    $scope.toggleOrder = function(attribute) {
-      if(attribute != $scope.orderAttribute) {
-        $scope.descending = false;
-      } else {
-        $scope.descending = !$scope.descending;
-      }
-      $scope.orderAttribute = attribute;
+  $scope.addLocation = function(name) {
+    var location = {name: name}
+    $http.post('api/v1/locations.json', location).then(function(response) {
+      $scope.locations.push(response.data);
+      }, function(error) {
+        $scope.errors = error.data.errors;
+      });
     }
 
     window.$scope = $scope;
