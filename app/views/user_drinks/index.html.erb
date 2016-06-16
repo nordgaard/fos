@@ -7,7 +7,7 @@
   </tr>
   <% @user_drinks.each do |user_drink| %>
   <tr>
-    <td><a href="/locations/<%= user_drink.location.id %>"><%= user_drink.ud_location_name%></a></td>
+    <td><a href="/locations/<%= user_drink.location_id %>"><%= user_drink.ud_location_name%></a></td>
     <td><%= link_to "Remove the Booze!", "/user_drinks/#{user_drink.id}", method: :delete %></td>
   </tr>
   <% end %>

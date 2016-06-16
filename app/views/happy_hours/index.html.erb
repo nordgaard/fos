@@ -1,24 +1,16 @@
-<head>Look at all these Happy Hours!!!</head>
+<div ng-app="app" ng-controller="happyHourCtrl" ng-init = "setup()"> 
 
-<%= form_tag "/search", method: :post do %>
-<%= label_tag :user_search, "Search" %>
-<%= text_field_tag :user_search %>
-<%= submit_tag "Search" %>
-    <% end %>
-    
-<a href="/locations?sort=city">Sort by City</a>
-<a href="/locations?sort=name">Sort by Name</a>
+  <ul>
+    <li ng-repeat="error in errors">{{ error }}</li>
+  </ul>
 
-<div class="row">
-  <% @happy_hours.each do |happy_hour| %>
-  <div class="col-md-3">
-    <div class="thumbnail">
-      <a href="/happy_hours/<%= happy_hour.id %>">
-        <p><%= happy_hour.deal %></p>      
-      </a>
-    </div>
-  </div>
-  <% end %>
+  <h1>Happy Hour Postings from People like You!!!</h1>
+
+  <label>Filter by XXXXXXXXXXXXX</label>
+  <input ng-model="nameFilter">
+
+<happy-hour-table> </happy-hour-table>
+
 </div>
 
 
