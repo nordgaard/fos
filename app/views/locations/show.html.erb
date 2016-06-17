@@ -1,34 +1,54 @@
+  <!DOCTYPE html>
+<html>
+<head>
+
   <h1>Details of this Location</h1>
 
   <p>Name: <%= @location.name %></p>
-  <p>Latitude: <%= @location.lat %></p>
-  <p>Longitude: <%= @location.lng %></p>
-  <p>
-    <%= image_tag @location.image_url(:thumb).to_s %>
-  </p>
+  <p>Address: <%= @location.vicinity %></p>
+
+  <div class="map">
+  <script src="http://maps.googleapis.com/maps/api/js"></script>
+  <script>
+    function initialize() {
+
+      var mapProp = {
+        center:new google.maps.LatLng('location.lat', 'location.lng'),
+        zoom:10,
+        mapTypeId:google.maps.MapTypeId.ROADMAP
+      };
+
+      var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
 
 
-
-  <h2>Add this place to your Happy Hour list!!</h2>
-  <%= form_tag "/user_drinks", method: :post do %>
-  <%= hidden_field_tag :location_id, @location.id %>
-  <%= submit_tag "Add To HH List" %>
-  <% end %>
-
-  <%= link_to "Destroy", "/locations/#{@location.id}", method: :delete %>
-  <%= link_to "Update", "/locations/#{@location.id}/edit", method: :get %>
-
-<!-- Other available happy hours for this location -->
-
-<!-- <div class="row">
-  <%# @happy_hours.each do |happy_hour| %>
-  <%#= if happy_hour.location_id == #add the location id from the current page %>      
-  <div class="col-md-3">
-    <div class="thumbnail">
-      <a href="/happy_hours/<%#=# happy_hour.id %>">
-        <p><%#= happy_hour.deal %></p>      
-      </a>
-    </div>
+      for (var i = 0; i < gon.locations.length; i++) {
+        var infowindow = new google.maps.InfoWindow({
+            content: '<a href="/locations/' + gon.locations[i].id + '">' + gon.locations[i].name + '</a>'
+        });
+        var marker = new google.maps.Marker({
+          position: {lat: gon.locations[i].lat , lng: gon.locations[i].lng },
+          map: map,
+          infowindow: infowindow
+        });
+        google.maps.event.addListener(marker, 'click', function() {
+          this.infowindow.open(map, this);
+        });
+      }
+    }
+    google.maps.event.addDomListener(window, 'load', initialize);
+  </script> 
   </div>
-  <#% #end %> -->
-<!-- #<#/div> -->
+</head>
+
+<button ><a href="/locations">See All Locations</button>
+<button ><a href="/happy_hours/new">Hype this Location</button>
+
+
+<body>
+  <div id="googleMap" style="width:500px;height:380px;"></div>
+</body>
+
+</html>
+
+
+

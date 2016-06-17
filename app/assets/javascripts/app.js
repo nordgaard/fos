@@ -1,7 +1,7 @@
 (function() {
   "use strict";
 
-  angular.module("app", ["templates" ]);
+  angular.module("app", ["templates"]);
 
 }());
 

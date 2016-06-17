@@ -1,12 +1,18 @@
 <table>
   <tr>
-    <th>Big Thought (hype_title)</th>
-    <th>Hype it Up!(hype_description)</th>
-    <th>WHere you at? (location, need to convert to location_id)</th>
+    <th>(day_of_week)</th>
+    <th>(start_hour)</th>
+    <th>(end_hour)</th>
+    <th>(hype_title)</th>
+    <th>(hype_description)</th>
+    <th>(location)</th>
   </tr>
-  <tr ng-repeat="happy-hour in happy-hours">
+  <tr ng-repeat="happy_hour in happy_hours">
+    <td>{{ happy_hour.day_of_week }}</td>
+    <td>{{ happy_hour.start_hour }}</td>
+    <td>{{ happy_hour.end_hour }}</td>
     <td>{{ happy_hour.hype_title }}</td>
     <td>{{ happy_hour.hype_description }}</td>
-    <td>PLACEHOLDER</td>
+    <td>{{PLACEHOLDER}}</td>
   </tr>
 </table> 

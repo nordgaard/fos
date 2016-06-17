@@ -29,9 +29,9 @@ def new
 end
 
 def create
-  address = "#{params[:lat]}, #{params[:lng]}"
+  address = params[:address]
   coordinates = Geocoder.coordinates(address)
-  @location = Location.new(name: location.name, place_id: location.place_id, lat: location.lat, lng: location.lng, icon: location.icon)
+  @location = Location.new(name: params[:name], lat: coordinates[0], lng: coordinates[1], vicinity: address)
   if @location.save
     flash[:success] = "You have listed a new drinkery!!"
     redirect_to "/locations/#{@location.id}"

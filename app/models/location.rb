@@ -1,7 +1,6 @@
 class Location < ActiveRecord::Base
-  has_many :users, through: :user_drinks
+  has_many :users, through: :happy_hours
   has_many :images
-  has_many :categories, through: :categorized_locations
   has_many :happy_hours
 
   mount_uploader :image, ImageUploader

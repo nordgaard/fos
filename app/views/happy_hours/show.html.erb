@@ -1,15 +1,31 @@
+  <!DOCTYPE html>
+<html>
+<head>
+  <h1>Details of this Happy Hour Posting</h1>
 
-  <h1>Details of this Happy Hour!!</h1>
-
-<p>Name: <%= @happy_hour.deal %></p>
-<p>Location: <%= @happy_hour.location_id %></p>
-<p>Day of the Week: <%= @happy_hour.day_of_week %></p>
+<p>Post Title: <%= @happy_hour.hype_title %></p>
+<p>Location: <%= @happy_hour.location.name %></p>
+<p>Description: <%= @happy_hour.hype_description %></p>
+<p>Day of the Week: <%= @happy_hour.day_of_week_id %></p>
 <p>Start Drinking: <%= @happy_hour.start_hour%></p>
 <p>Closin' Time: <%= @happy_hour.end_hour %></p>
+  <!DOCTYPE html>
+<html>
+<head>
 
-  <h1>Add this place to your Happy Hour list!!</h1>
-  <%= form_tag "/user_drinks", method: :post do %>
-  <%= hidden_field_tag :user_id, @user.id %>
-  <%= hidden_field_tag :location_id, @happy_hour.location_id %>
-  <%= submit_tag "Add To HH List" %>
-  <% end %>
+
+
+</head>
+
+<button ><a href="/happy_hours">See All Happy Hour Hypes</button>
+<button ><a href="/happy_hours/new">Hype a New Happy Hour</button>
+
+
+<body>
+  <div id="googleMap" style="width:500px;height:380px;"></div>
+</body>
+
+</html>
+
+
+

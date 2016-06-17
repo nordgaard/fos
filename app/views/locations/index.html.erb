@@ -1,18 +1,31 @@
-<div ng-app="app" ng-controller="locationCtrl" ng-init = "setup()"> 
+<div ng-controller="locationCtrl" ng-init="setup()"> 
   <ul>
     <li ng-repeat="error in errors">{{ error }}</li>
   </ul>
 
   <h1>Look at all these Drinkeries!!!</h1>
 
-  <p>
-    Name<input ng-model="name">
-    <button ng-click = "addLocation(name)">Add a Location</button>
-  </p>
-  
-  <label>Filter by Name</label>
+  <label>Search Listings</label>
   <input ng-model="nameFilter">
-
-<location-table></location-table>
-
+<div class="table">
+  <table>
+    <tr>
+      <th>Location Name</th>
+      <th>Address</th>
+      <th>View this Location</th>
+      <th>Are they Happy?</th>
+    </tr>
+    <tr ng-repeat="location in locations | filter: nameFilter ">
+      <td>{{ location.name }}</td>
+      <td>{{ location.vicinity }}</td>
+      <td><input type="button" onclick="'/location/' + location.id " value="See This Location" /></td>
+      <td><input type="button" onclick="'/location/' + location.id " value="Hype This House" /></td>
+    </tr>
+  </table> 
 </div>
+
+<!-- <location-table></location-table>
+ -->
+</div>
+
+<div>Not seeing your location?<button>Add Location</button></div>

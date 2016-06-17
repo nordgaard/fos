@@ -5,14 +5,12 @@ end
 
 
   def index
-   #  sort_choice = params[:sort]
-   #  puts "sort choice?"
-   #  p sort_choice
-   #  if sort_choice
-   #   @locations = Location.order(sort_choice)
-   # else
+    if params[:locations] = "all"
      @locations = Location.all
-   # end
+   elsif params[:locations] = "happy_hours"
+    @locations = Location
+  end
+    
  end
 
 

@@ -1,18 +1,35 @@
-<div ng-app="app" ng-controller="happyHourCtrl" ng-init = "setup()"> 
+<div ng-controller="happyHourCtrl" ng-init="setup()"> 
+
 
   <ul>
     <li ng-repeat="error in errors">{{ error }}</li>
   </ul>
-
+  
   <h1>Happy Hour Postings from People like You!!!</h1>
 
-  <label>Filter by XXXXXXXXXXXXX</label>
+  <label>Search Postings</label>
   <input ng-model="nameFilter">
-
-<happy-hour-table> </happy-hour-table>
+ <table>
+   <tr>
+     <th>Name of Location</th>
+     <th>Posting Title</th>
+     <th>Day of the Week</th>
+     <th>Starting Time</th>
+     <th>Ending Time</th>
+     <th>Description</th>
+   </tr>
+   <tr ng-repeat="happy_hour in happy_hours | filter: nameFilter">
+     <td>{{ happy_hour.location}}</td>
+     <td>{{ happy_hour.hype_title }}</td>
+     <td>{{ happy_hour.day_of_week }}</td>
+     <td>{{ happy_hour.start_hour }}</td>
+     <td>{{ happy_hour.end_hour }}</td>
+     <td>{{ happy_hour.hype_description }}</td>
+   </tr>
+ </table> 
 
 </div>
-
+   <p><button><a href="/happy_hours/new">Hype a New Happy Hour</button></p> 
 
 
 

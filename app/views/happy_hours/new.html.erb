@@ -1,0 +1,47 @@
+    <section>
+      <div class="row">
+        <div class="col-sm-9">
+          <div class="happy_hour_single">
+            <% if @happy_hour && @happy_hour.errors.any? %>
+              <ul>
+                <% @happy_hour.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+                <% end %>
+              </ul>
+            <% end %>
+            <h1>New Happy Hour Hype</h1>
+
+            <%= form_tag '/happy_hours', method: :post do %>
+
+            <div>
+              <%= label_tag :hype_title %>
+              <%= text_field_tag :hype_title, @happy_hour.hype_title %>
+            </div>
+            <div>
+            <%= label_tag :location %>
+              <%= collection_select :location, :location_id, Location.all, :id, :name %>
+            </div>    
+            <div>
+            <%= label_tag :day_of_week %>
+              <%= collection_select :day_of_week, :day_of_week_id, DayOfWeek.all, :id, :day_of_week %>
+            </div>           
+            <div>
+            <%= label_tag :start_time %>
+              <%= collection_select :start_hour, :time_of_day_id, TimeOfDay.all, :id, :time %>
+            </div>           
+            <div>
+            <%= label_tag :end_time %>
+              <%= collection_select :time_of_day, :time_of_day_id, TimeOfDay.all, :id, :time %>
+            </div>
+            <div>
+              <%= label_tag :hype_description %>
+              <%= text_field_tag :hype_description, @happy_hour.hype_description %>
+            </div>
+
+            <%= submit_tag "Hype your Happy Hour" %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </section>
+

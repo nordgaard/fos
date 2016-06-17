@@ -1,4 +1,4 @@
-f/*!
+/*!
  * Vitality v1.3.5 (http://themes.startbootstrap.com/vitality-v1.3.5)
  * Copyright 2013-2015 Start Bootstrap Themes
  * To use this theme you must have a license purchased at WrapBootstrap (https://wrapbootstrap.com)
@@ -15,9 +15,9 @@ body {
 }
 
 .bg-gray {
-  background-image: url(/assets/drink_map_background.jpg);
+/*  background-image: url(/assets/drink_map_background.jpg);
   opacity: 0.4;
-  background-size: cover;
+  background-size: cover;*/
 }
 .bg-dark {
   color: white;
@@ -128,7 +128,18 @@ h6 {
   font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 900;
   text-transform: uppercase;
+  border: 2px solid;
+  border-radius: 25px;
+  background-color: grey;
 }
+
+h2 {
+  background-image: image-url('drink_map_background.jpg') !important;
+
+}
+
+
+
 @media (min-width: 481px) {
   h1 {
     font-size: 25px;
@@ -1080,7 +1091,10 @@ body.modern {
   font-family: "Peralta";
   text-transform: uppercase;
   font-weight: 400;
+/*  border: 2px solid;
+  border-radius: 25px;*/
 }
+
 body.modern h1,
 body.modern h2,
 body.modern h3,
@@ -1091,8 +1105,12 @@ body.modern h6 {
  color: #E3F8F9;
  text-shadow: 2px 2px #1341F9;
  font-weight: 700;
- text-transform: uppercase;
+ text-transform: uppercase;border: 2px solid;
+  border-radius: 25px, !important;
+  background: gray, !important;
 }
+
+
 body.modern p.lead {
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 700;

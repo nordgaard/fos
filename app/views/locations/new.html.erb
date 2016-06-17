@@ -1,24 +1,31 @@
-<h1>Add a new Location!</h1>
+    <section>
+      <div class="row">
+        <div class="col-sm-9">
+          <div class="location_single">
+            <% if @location && @location.errors.any? %>
+              <ul>
+                <% @location.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+                <% end %>
+              </ul>
+            <% end %>
+            <h1>New Drinkery</h1>
 
-<% if @location && @location.errors.any? %>
-<ul>
-  <% @location.errors.full_messages.each do |message| %>
-  <li ><%= message %></li>
-  <% end %>
-</ul>
+            <%= form_tag '/locations', method: :post do %>
 
-<% end %>
-<%= form_tag '/locations', method: :post do %>
+            <div>
+              <%= label_tag :name %>
+              <%= text_field_tag :name, @location.name %>
+            </div>
+            <div>
+              <%= label_tag :address %>
+              <%= text_field_tag :address, @location.vicinity %>
+            </div>
+            <div>
 
-<div>
-  <%= label_tag :name %>
-  <%= text_field_tag :name, @location.name%>
-</div>
-
-
-<!-- Include address somehow? -->
-
-
-<%= submit_tag "Add location" %>
-
-<% end %>
+            <%= submit_tag "Add Location" %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </section>

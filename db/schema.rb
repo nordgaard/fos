@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160616204058) do
+ActiveRecord::Schema.define(version: 20160617211109) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,8 +44,13 @@ ActiveRecord::Schema.define(version: 20160616204058) do
     t.datetime "updated_at",  null: false
   end
 
-  create_table "happy_hours", force: :cascade do |t|
+  create_table "day_of_weeks", force: :cascade do |t|
     t.string   "day_of_week"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "happy_hours", force: :cascade do |t|
     t.integer  "start_hour"
     t.integer  "end_hour"
     t.integer  "location_id"
@@ -53,6 +58,8 @@ ActiveRecord::Schema.define(version: 20160616204058) do
     t.datetime "updated_at"
     t.string   "hype_title"
     t.text     "hype_description"
+    t.integer  "user_id"
+    t.integer  "day_of_week_id"
   end
 
   create_table "images", force: :cascade do |t|
@@ -73,12 +80,17 @@ ActiveRecord::Schema.define(version: 20160616204058) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "price_level"
-    t.string   "formatted_address"
-    t.string   "formatted_phone_number"
     t.string   "website"
     t.text     "types"
     t.text     "photos"
     t.text     "opening_hours"
+    t.string   "vicinity"
+  end
+
+  create_table "time_of_days", force: :cascade do |t|
+    t.string   "time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "user_drinks", force: :cascade do |t|

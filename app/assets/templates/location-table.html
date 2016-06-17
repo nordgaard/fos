@@ -5,8 +5,8 @@
     <th>Longitude</th>
   </tr>
   <tr ng-repeat="location in locations">
-    <td>{{ location.name }}</td>
-    <td>{{ location.lat }}</td>
-    <td>{{ location.lng }}</td>
+    <td ng-click="showLocation(location)">{{ location.name }}</td>
+    <td ng-click="#">{{ location.lat }}</td>
+    <td ng-click="#">{{ location.lng }}</td>
   </tr>
 </table>  

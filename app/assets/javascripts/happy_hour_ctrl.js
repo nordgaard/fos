@@ -4,7 +4,7 @@
 
     $scope.setup = function() {
       $http.get('/api/v1/happy_hours.json').then(function(response) {
-        $scope.locations = response.data;
+        $scope.happy_hours = response.data;
       });
     }
     window.$scope = $scope;

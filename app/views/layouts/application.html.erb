@@ -22,15 +22,6 @@
  <nav class="navbar navbar-inverse">
    <div class="container-fluid">
      <!-- Brand and toggle get grouped for better mobile display -->
-     <div class="navbar-header">
-       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-         <span class="sr-only">Toggle navigation</span>
-         <span class="icon-bar"></span>
-         <span class="icon-bar"></span>
-         <span class="icon-bar"></span>
-       </button>
-       
-     </div>
 
      <!-- Collect the nav links, forms, and other content for toggling -->
      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -40,8 +31,8 @@
        <ul class="nav navbar-nav navbar-right">
          <% if current_user %>
          <li class="custom-name"><a href="#">Hello, <%=current_user.first_name %>!<span class="sr-only"></span></a></li>
-         <li><a href="/user_drinks">Your Happy Hours</a></li>
-         <li><a href="/user_fav_locations">Your Locations</a></li>
+         <li><a href="">x</a></li>
+         <li><a href="">x</a></li>
          <li><%= link_to "Sign Out", "/users/sign_out", method: :delete %></li>
          <% else %>
          <li><%= link_to "Sign Up", "/users/sign_up" %></li>
@@ -60,28 +51,31 @@
 
 
 
+ <div ng-app="app">
+   <%= yield %>
+ </div>
 
- <%= yield %>
  <footer class="footer" style="background-image: url('assets/images/theme/bg-footer.jpg')">
+      <div class="col-md-12 contact-details">
+        <h4>Quotation Here</h4>
+        <h5>Author Here</h5>
+      </div>
   <div class="container text-center">
     <div class="row">
       <div class="col-md-6 contact-details">
-        <h4><i class="fa fa-ambulance"></i> Need a Break from Drinking?</h4>
-        <p><a href="http://www.recovery.org/topics/addiction-recovery-helplines/">Seek Help</a>
-        </p>
-      </div>         <div class="col-md-6 contact-details">
-      <h4><i class="fa fa-envelope"></i> We Want to Hear from You!</h4>
-      <p><a href="mailto:jenordgaard@gmail.com">Email Here</a>
-      </p>
+        <h4><i class="fa fa-ambulance"></i> Need a Break from Drinking?<a href="http://www.recovery.org/topics/addiction-recovery-helplines/"></a></h4>
+      </div>         
+      <div class="col-md-6 contact-details">
+        <h4><i class="fa fa-envelope"></i>We Want to Hear from You!<a href="mailto:jenordgaard@gmail.com"></a></h4>
+      </div>
+    </div>
+    <div class="row copyright">
+      <div class="col-lg-12">
+        <p class="small">Created by Jens Nordgaard</p>
+        <i class="fa fa-jpy" aria-hidden="true"></i>
+      </div>
     </div>
   </div>
-  <div class="row copyright">
-    <div class="col-lg-12">
-      <p class="small">Created by Jens Nordgaard</p>
-      <i class="fa fa-jpy" aria-hidden="true"></i>
-    </div>
-  </div>
-</div>
 </footer>
 
 </body>
