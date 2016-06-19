@@ -19,7 +19,7 @@
       <td>{{ location.name }}</td>
       <td>{{ location.vicinity }}</td>
       <td><input type="button" onclick="'/location/' + location.id " value="See This Location" /></td>
-      <td><input type="button" onclick="'/location/' + location.id " value="Hype This House" /></td>
+      <td><input type="button" onclick="'/happy_hours/new' + location.id " value="Hype This HH" /></td>
     </tr>
   </table> 
 </div>
@@ -28,4 +28,5 @@
  -->
 </div>
 
-<div>Not seeing your location?<button>Add Location</button></div>
+   <p><button><a href="/happy_hours/new">Hype a New Happy Hour</button></p> 
+   <p><button><a href="/locations/new">Add New Location</button></p> 

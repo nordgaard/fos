@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.quovolver
 //= require bootstrap-sprockets
 //= require angular.min
 //= require angular-rails-templates

@@ -12,24 +12,29 @@
  <table>
    <tr>
      <th>Name of Location</th>
+     <th>Name of Author</th>
      <th>Posting Title</th>
      <th>Day of the Week</th>
      <th>Starting Time</th>
      <th>Ending Time</th>
      <th>Description</th>
+     <th>See the Location</th>
    </tr>
    <tr ng-repeat="happy_hour in happy_hours | filter: nameFilter">
      <td>{{ happy_hour.location}}</td>
+     <td>{{ happy_hour.author}}</td>
      <td>{{ happy_hour.hype_title }}</td>
      <td>{{ happy_hour.day_of_week }}</td>
      <td>{{ happy_hour.start_hour }}</td>
      <td>{{ happy_hour.end_hour }}</td>
      <td>{{ happy_hour.hype_description }}</td>
+     <td><input type="button" onclick="'/location/' + happy_hour.location.id " value="See This Location" /></td>
    </tr>
  </table> 
 
 </div>
    <p><button><a href="/happy_hours/new">Hype a New Happy Hour</button></p> 
+   <p><button><a href="/locations/new">Add New Location</button></p> 
 
 
 
