@@ -4,6 +4,7 @@ body{
   color: #E3F8F9;
 }
 
+
 .inverse-dropdown-color {
 color: black;
 
@@ -12,6 +13,7 @@ color: black;
 .quotes {
 
   text-align: center;
+  border-radius: 10px;
 }
 
 
@@ -130,14 +132,21 @@ table th li {
   text-align: center;
 }
 
+table tr:nth-child(odd) {
+    background: #585C66;
+}
+
 
 #work h2 {
   font-size: 50px
+  // background-image: image-url('assets/images/drink_map_background.jpg');
+
   
 }
 
 section .work{
   background-color: black;
+
 
 }
 
@@ -196,26 +205,31 @@ body {
  text-shadow: 2px 2px #1341F9;
   // border: 2px solid;
   // border-radius: 25px;
+
 }
 
 
 h1,
-h2,
 h3,
 h4,
 h5,
-h6 {
+{
   font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 900;
   text-transform: uppercase;
   border: 2px solid;
   border-radius: 25px;
-  background-color: grey;
+
 }
 
 
 h2 {
-  background-image: image-url('assets/images/drink_map_background.jpg');
+  font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  border: 2px solid;
+  border-radius: 25px;
+  background-image: url("drink_map_background.jpg");
 }
 
 

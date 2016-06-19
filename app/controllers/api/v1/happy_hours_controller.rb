@@ -8,6 +8,7 @@ class Api::V1::HappyHoursController < ApplicationController
    #   @happy_hours = happy_hour.order(sort_choice)
    # else
      @happy_hours = HappyHour.all
+     @day_format = DayOfWeek.all
    # end
  end
 

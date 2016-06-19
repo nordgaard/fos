@@ -1,6 +1,7 @@
 class HappyHoursController < ApplicationController
   def index
     @happy_hours = HappyHour.all
+    @day_format = DayOfWeek.all
   end
 
 

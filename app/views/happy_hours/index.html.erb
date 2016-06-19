@@ -18,17 +18,15 @@
      <th>Starting Time</th>
      <th>Ending Time</th>
      <th>Description</th>
-     <th>See the Location</th>
-   </tr>
+     </tr>
    <tr ng-repeat="happy_hour in happy_hours | filter: nameFilter">
-     <td>{{ happy_hour.location}}</td>
+     <td><a href ="/locations/{{happy_hour.location_id}}" >{{ happy_hour.location}}</a></td>
      <td>{{ happy_hour.author}}</td>
      <td>{{ happy_hour.hype_title }}</td>
      <td>{{ happy_hour.day_of_week }}</td>
      <td>{{ happy_hour.start_hour }}</td>
      <td>{{ happy_hour.end_hour }}</td>
      <td>{{ happy_hour.hype_description }}</td>
-     <td><input type="button" onclick="'/location/' + happy_hour.location.id " value="See This Location" /></td>
    </tr>
  </table> 
 
