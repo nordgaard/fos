@@ -9,6 +9,8 @@ class Api::V1::HappyHoursController < ApplicationController
    # else
      @happy_hours = HappyHour.all
      @day_format = DayOfWeek.all
+     @time_format =TimeOfDay.all
+     @author_format = User.all
    # end
  end
 

@@ -19,9 +19,9 @@
      <th>Ending Time</th>
      <th>Description</th>
      </tr>
-   <tr ng-repeat="happy_hour in happy_hours | filter: nameFilter">
+   <tr ng-repeat="happy_hour in happy_hours | filter: nameFilter| orderBy: 'location'">
      <td><a href ="/locations/{{happy_hour.location_id}}" >{{ happy_hour.location}}</a></td>
-     <td>{{ happy_hour.author}}</td>
+     <td>{{ happy_hour.author.first_name}}</td>
      <td>{{ happy_hour.hype_title }}</td>
      <td>{{ happy_hour.day_of_week }}</td>
      <td>{{ happy_hour.start_hour }}</td>
