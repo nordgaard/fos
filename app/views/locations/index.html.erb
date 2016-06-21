@@ -12,17 +12,17 @@
     <tr>
       <th>Location Name</th>
       <th>Address</th>
+      <th>Something Else...</th>
     </tr>
     <tr ng-repeat="location in locations | filter: nameFilter | orderBy: 'name'">
       <td><a href ="/locations/{{location.id}}">{{ location.name }}</td>
       <td>{{ location.vicinity }}</td>
+      <td>{{ "placeholder" }}</td>
     </tr>
   </table> 
 </div>
 
-<!-- <location-table></location-table>
- -->
 </div>
 
-   <p><button><a href="/happy_hours/new">Hype a New Happy Hour</button></p> 
-   <p><button><a href="/locations/new">Add New Location</button></p> 
+   <p><button><a href="/happy_hours/new">Hype a New Happy Hour></button></p> 
+   <p><button><a href="/locations/new">Add New Location></button></p> 
