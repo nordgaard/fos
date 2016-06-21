@@ -25,7 +25,8 @@
           infowindow: infowindow
         });
         google.maps.event.addListener(marker, 'click', function() {
-          this.infowindow.open(map, this);
+          infowindow.setContent('<%= @locations.name %>');
+          infowindow.open(map, this);
         });
       }
     }
