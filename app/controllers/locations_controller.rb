@@ -10,6 +10,9 @@ class LocationsController < ApplicationController
      @locations = Location.all
  end
 
+def resume
+  
+end
 
  def show
   @location = Location.find_by(id: params[:id])

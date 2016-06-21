@@ -7,6 +7,14 @@
         $scope.happy_hours = response.data;
       });
     }
+
+    $scope.filterColumn = "location";
+
+    $scope.changeFilter = function(name) {
+      $scope.filterColumn = name;
+    }
+
+
     window.$scope = $scope;
   });
 })(); 

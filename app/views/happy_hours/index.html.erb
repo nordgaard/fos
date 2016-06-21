@@ -11,15 +11,15 @@
   <input ng-model="nameFilter">
  <table>
    <tr>
-     <th>Name of Location</th>
-     <th>Name of Author</th>
-     <th>Posting Title</th>
-     <th>Day of the Week</th>
-     <th>Starting Time</th>
-     <th>Ending Time</th>
-     <th>Description</th>
+     <th ng-click="changeFilter('location')">Name of Location</th>
+     <th ng-click="changeFilter('author.first_name')">Name of Author</th>
+     <th ng-click="changeFilter('hype_title')">Posting Title</th>
+     <th ng-click="changeFilter('day_of_week')">Day of the Week</th>
+     <th ng-click="changeFilter('start_hour')">Starting Time</th>
+     <th ng-click="changeFilter('end_hour')">Ending Time</th>
+     <th ng-click="changeFilter('hype_description')">Description</th>
      </tr>
-   <tr ng-repeat="happy_hour in happy_hours | filter: nameFilter| orderBy: 'location'">
+   <tr ng-repeat="happy_hour in happy_hours | filter: nameFilter | orderBy: filterColumn">
      <td><a href ="/locations/{{happy_hour.location_id}}" >{{ happy_hour.location}}</a></td>
      <td>{{ happy_hour.author.first_name}}</td>
      <td>{{ happy_hour.hype_title }}</td>

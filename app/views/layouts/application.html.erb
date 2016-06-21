@@ -43,8 +43,6 @@
          <li> <%= link_to "Happy Hours", "/happy_hours" %></li>  
          <li> <%= link_to "Locations", "/locations" %></li>  
        </ul>
-
-
        <ul class="nav navbar-nav navbar-right">
          <li class="dropdown">
            <% if current_user %>
@@ -54,8 +52,6 @@
 
                <div class="inverse-dropdown-color"></div>
                <li><%= link_to "Sign Out", "/users/sign_out", method: :delete %></li>
-               <li><a href="#">Your Locations</a></li>
-               <li><a href="#">Your Happy Hour Hypes</a></li>
              </ul>
              <% else %>
              <li><%= link_to "Sign Up", "/users/sign_up" %></li>
@@ -70,44 +66,46 @@
 
    <!-- scrolling images -->
 
-
-
-
-
-
    <div ng-app="app">
      <%= yield %>
    </div>
 
-   <footer class="footer" style="">
-
-
-    <div class="container text-center">
-      <div class="row">
-      
-        <div class="col-md-3 contact-details">
-          <h4><i class="fa fa-ambulance" ></i>
-          <a href="http://www.aa.org/" target="_top">  Need a break from drinking?</a></h4>
-        </div>   
-        <div class="col-md-3 contact-details">
-          <h4><i class="fa fa-ambulance" ></i>
-          <a href="http://www.aa.org/" target="_top">  Need a break from drinking?</a></h4>
-        </div>   
-        <div class="col-md-3 contact-details">
-          <h4><i class="fa fa-ambulance" ></i>
-          <a href="http://www.aa.org/" target="_top">  Need a break from drinking?</a></h4>
-        </div>     
-        <div class="col-md-3 contact-details">
-          <h4><i class="fa fa-jpy" ></i>
-          <a href="mailto:jenordgaard@gmail.com" target="_top">  Contact the Developer</a></h4>
-        </div>         
-          <p class="small">Created by Jens Nordgaard</p>
+  <footer class="footer" style="background-image: url('assets/img/bg-footer.jpg')">
+      <div class="container text-center">
+          <div class="row">
+              <div class="col-md-4 contact-details">
+                  <h4><i class="fa fa-phone"></i> Call</h4>
+                  <p>510-309-0237</p>
+              </div>
+              <div class="col-md-4 contact-details">
+                  <h4><i class="fa fa-info"></i> Link to Resume</h4>
+                  <p>3481 Melrose Place
+                      <br>Beverly Hills, CA 90210</p>
+              </div>
+              <div class="col-md-4 contact-details">
+                  <h4><i class="fa fa-envelope"></i> Email</h4>
+                  <p><a href="mailto:jenordgaard@gmail.com"></a>
+                  </p>
+              </div>
+          </div>
+          <div class="row social">
+              <div class="col-lg-12">
+                  <ul class="list-inline">
+                      <li><a href="#"><i class="fa fa-facebook fa-fw fa-2x"></i></a>
+                      </li>
+                      <li><a href="#"><i class="fa fa-twitter fa-fw fa-2x"></i></a>
+                      </li>
+                      <li><a href="#"><i class="fa fa-linkedin fa-fw fa-2x"></i></a>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+          <div class="row copyright">
+              <div class="col-lg-12">
+                  <p class="small">&copy; 2015 Start Bootstrap Themes</p>
+              </div>
+          </div>
       </div>
-
-          
-        </div>
-      </div>
-    </div>
   </footer>
 
 </body>

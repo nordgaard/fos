@@ -15,7 +15,7 @@
 
 
 <body>
-  <div id="googleMap" style="width:500px;height:380px;"></div>
+  <div id="googleMap" style="width:1200px;height:500px;padding:"></div>
 </body>
 
 </html>
@@ -29,19 +29,27 @@
   <script>
   function initialize() {
 
-    var mapProp = {
-      center:new google.maps.LatLng(-25.363, 131.044),
-      zoom:10,
-      mapTypeId:google.maps.MapTypeId.ROADMAP
-    };
+        var mapProp = {
+          center:new google.maps.LatLng(<%= @location.lat %>,<%= @location.lng %>),
+          zoom:10,
+          mapTypeId:google.maps.MapTypeId.ROADMAP
+        };
 
-    var map = new google.maps.Map(document.getElementById('googleMap'), mapProp {
-    });
+        var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
 
-    var marker = new google.maps.Marker({
-      position: {-25.363, 131.044},
-      map: map,
-      infowindow: infowindow
-    });
-  }
+
+          var infowindow = new google.maps.InfoWindow({
+              content: '<a>stuff</a>'
+          });
+          var marker = new google.maps.Marker({
+            position: {lat: <%= @location.lat %>, lng: <%= @location.lng %>},
+            map: map,
+            infowindow: infowindow
+          });
+          google.maps.event.addListener(marker, 'click', function() {
+            this.infowindow.open(map, this);
+          });
+
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
   </script>   

@@ -131,10 +131,18 @@ table {
 table tr {
  border-bottom: 1px solid #ddd;
  padding: 10px;
+ min-height: 50px !important;
 }
 table td {
  border-bottom: 1px solid #ddd;
  padding: 10px;
+font-family: Arial;
+text-transform: none;
+font-weight: normal;
+
+}
+
+table td.description {
 }
 
 table th {
