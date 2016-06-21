@@ -4,6 +4,22 @@ body{
   color: #E3F8F9;
 }
 
+.resume img {
+  width: 1000px;
+  height: 1300px;
+  text-align: center;
+  position: relative;
+  padding: 50px;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+.resume {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
 
 .inverse-dropdown-color {
 color: black;
@@ -226,6 +242,12 @@ body {
  font-family: 'Peralta', cursive !important;
  color: #E3F8F9;
  text-shadow: 2px 2px #1341F9;
+ padding: 10px;
+}
+
+.map {
+font-family: 'Bungee Shade', cursive;
+
 }
 
 .logo {
@@ -254,10 +276,15 @@ h2 {
   text-transform: uppercase;
   // border: 2px solid;
   border-radius: 1px;
-  background-image: url("drink_map_2.png");
+  background-image: url("drink_map_background.jpg");
   z-index: 2000 !important;
   display: inline;
   padding: 10px;
+
+  h2 :hover
+  {
+    background: gray;
+  }
 }
 
  h4 {
