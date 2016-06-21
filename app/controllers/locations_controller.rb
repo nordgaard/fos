@@ -16,6 +16,9 @@ class LocationsController < ApplicationController
   @user = current_user
 end
 
+def test
+end
+
 
 def new
   @location = Location.new

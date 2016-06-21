@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   get '/user_fav_locations', to: "user_drinks#user_fav_locations"
   get '/maps', to: "maps#index"
+  get 'locations/test', to: "locations#test"
   resources :users
   resources :categorized_locations
   resources :categories

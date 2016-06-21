@@ -15,7 +15,7 @@
       <th>Something Else...</th>
     </tr>
     <tr ng-repeat="location in locations | filter: nameFilter | orderBy: 'name'">
-      <td><a href ="/locations/{{location.id}}">{{ location.name }}</td>
+      <td><a href="/locations/{{location.id}}">{{ location.name }}</td>
       <td>{{ location.vicinity }}</td>
       <td>{{ "placeholder" }}</td>
     </tr>
