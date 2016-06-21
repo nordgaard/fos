@@ -12,12 +12,12 @@
     <tr>
       <th>Location Name</th>
       <th>Address</th>
-      <th>Something Else...</th>
+      <th>Type of Establishment</th>
     </tr>
     <tr ng-repeat="location in locations | filter: nameFilter | orderBy: 'name'">
       <td><a href="/locations/{{location.id}}">{{ location.name }}</td>
       <td>{{ location.vicinity }}</td>
-      <td>{{ "placeholder" }}</td>
+      <td>{{ location.type }}</td>
     </tr>
   </table> 
 </div>

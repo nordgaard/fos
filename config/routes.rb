@@ -21,6 +21,7 @@ Rails.application.routes.draw do
       resources :happy_hours
       resources :locations
       resources :user_drinks
+      resources :users
     end
   end
 end

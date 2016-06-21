@@ -5,4 +5,5 @@ json.array! @locations.each do |location|
   json.lng location.lng 
   json.vicinity location.vicinity
   json.location location.vicinity
+  json.type location.types
 end

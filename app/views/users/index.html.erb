@@ -1,15 +1,26 @@
-<head>Look at all these Drinkers!!!</head>
+<div ng-controller="userCtrl" ng-init="setup()"> 
+  <ul>
+    <li ng-repeat="error in errors">{{ error }}</li>
+  </ul>
 
-<div class="row">
-  <% @users.each do |user| %>
-  <div class="col-md-3">
-    <div class="thumbnail">
-      <a href="/users/<%= user.id %>">
-        <p><%= user.first_name %></p>
-        <p><%= user.last_name %></p>
-        <p><%= user.email %></p>
-      </a>
-    </div>
-  </div>
-  <% end %>
+  <h1>Look at all these drinkers!!!</h1>
+
+  <label>Search Users</label>
+  <input ng-model="userFilter">
+<div class="table">
+  <table>
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+    </tr>
+    <tr ng-repeat="user in users | filter: userFilter | orderBy: 'first_name'">
+      <td>{{ user.first_name }}</td>
+      <td>{{ user.last_name }}</td>
+    </tr>
+  </table> 
 </div>
+
+</div>
+
+   <p><button><a href="/happy_hours/new">Hype a New Happy Hour></button></p> 
+   <p><button><a href="/users/new">Add New user></button></p> 

@@ -10,7 +10,7 @@
   </div>
 </head>
 
-<button ><a href="/locations">See All Locations</a></button>
+<button ><a href="/maps">See All Locations</a></button>
 <button ><a href="/happy_hours/new">Hype this Location</a></button>
 
 
@@ -39,7 +39,7 @@
 
 
           var infowindow = new google.maps.InfoWindow({
-              content: '<a href="/locations/<%= @location.id %>"><%= @location.name %></a>'
+              content: '<a href="/locations/<%= @location.name %>"><%= @location.name %></a>'
           });
           var marker = new google.maps.Marker({
             position: {lat: <%= @location.lat %>, lng: <%= @location.lng %>},
