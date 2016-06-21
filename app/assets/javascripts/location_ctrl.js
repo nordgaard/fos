@@ -8,6 +8,13 @@
       });
     }    
 
+    $scope.filterColumn = "name";
+
+    $scope.changeFilter = function(name) {
+      $scope.filterColumn = name;
+    }
+
+
     window.$scope = $scope;
   });
 })(); 

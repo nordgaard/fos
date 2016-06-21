@@ -5,16 +5,16 @@
 
   <h1>Look at all these Drinkeries!!!</h1>
 
-  <label>Search Listings</label>
-  <input ng-model="nameFilter">
+  <label>Search</label>
+  <input ng-model="locationFilter">
 <div class="table">
   <table>
     <tr>
-      <th>Location Name</th>
-      <th>Address</th>
-      <th>Type of Establishment</th>
+      <th ng-click="changeFilter('name')">Location Name</th>
+      <th ng-click="changeFilter('vicinity')">Address</th>
+      <th ng-click="changeFilter('type')">Type of Establishment</th>
     </tr>
-    <tr ng-repeat="location in locations | filter: nameFilter | orderBy: 'name'">
+    <tr ng-repeat="location in locations | filter: locationFilter | orderBy: filterColumn">
       <td><a href="/locations/{{location.id}}">{{ location.name }}</td>
       <td>{{ location.vicinity }}</td>
       <td>{{ location.type }}</td>

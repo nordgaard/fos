@@ -30,6 +30,7 @@ color: black;
   text-align: center;
   border-radius: 10px;
   font-family: 'Permanent Marker', cursive;
+  font-size: 30px;
   color: #C5D9A5;
 }
 
@@ -143,7 +144,8 @@ text-align: center;
 
 table {
 
-  
+margin-top: 15px;
+margin-bottom: 15px;
 }
 
 table tr {
@@ -154,9 +156,10 @@ table tr {
 table td {
  border-bottom: 1px solid #ddd;
  padding: 10px;
-font-family: Arial;
-text-transform: none;
+ font-family: 'Oswald', sans-serif;
+ text-transform: none;
 font-weight: normal;
+font-size: 18px;
 
 }
 
@@ -235,7 +238,7 @@ body {
 .wow h1 {
  font-family: 'Alfa Slab One', cursive !important;
  color: #E3F8F9;
- text-shadow: 2px 2px #1341F9;
+ text-shadow: 2px 2px black;
  font-size: 100px;
 
 }
@@ -243,7 +246,7 @@ body {
 .wow h3 {
  font-family: 'Peralta', cursive !important;
  color: #E3F8F9;
- text-shadow: 2px 2px #1341F9;
+ text-shadow: 2px 2px black;
  padding: 10px;
 }
 
@@ -258,25 +261,20 @@ padding: 10px;
 
 }
 
-h1,
 h3,
 h5,
 {
   font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 900;
-  text-transform: uppercase;
   border: 2px solid;
   border-radius: 25px;
   background-color: grey;
-display: inline;
 }
 
 
 h2 {
   font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 900;
-  text-transform: uppercase;
-  // border: 2px solid;
   border-radius: 1px;
   background-image: url("drink_map_background.jpg");
   z-index: 2000 !important;
@@ -292,7 +290,6 @@ h2 {
  h4 {
   font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 900;
-  text-transform: uppercase; 
  }
 
 
@@ -325,7 +322,7 @@ h2 {
   font-family: 'Peralta', cursive !important;
   padding: 3px;
   color: #E3F8F9;
-  text-shadow: 2px 2px #1341F9;
+  text-shadow: 2px 2px black;
 }
 
 

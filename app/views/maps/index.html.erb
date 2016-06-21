@@ -2,374 +2,59 @@
 <html>
 <link href='https://fonts.googleapis.com/css?family=Permanent+Marker' rel='stylesheet' type='text/css'>
 <head>
-<h1 Current Drinkeries Map></h1>
-<h2>Please feel free to add locations!</h2>
+    <h1> Current Drinkeries Map </h1>
 
-
-  <div class="map">
-  <script src="http://maps.googleapis.com/maps/api/js"></script>
-  <script> 
-  function initialize() {
-
-      var mapProp = {
-        center:new google.maps.LatLng(37.752191, -122.447335),
-        zoom:10,
-        mapTypeId:google.maps.MapTypeId.ROADMAP
-      };
-
-      var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
-
-
-      for (var i = 0; i < gon.locations.length; i++) {
-        var infowindow = new google.maps.InfoWindow({
-            content: '<a href="/locations/' + gon.locations[i].id + '">' + gon.locations[i].name + '</a>'
-        });
-        var marker = new google.maps.Marker({
-          position: {lat: gon.locations[i].lat , lng: gon.locations[i].lng },
-          map: map,
-          infowindow: infowindow
-        });
-        google.maps.event.addListener(marker, 'click', function() {
-          infowindow.setContent('<%= @locations.name %>');
-          infowindow.open(map, this);
-        });
-      }
-    }
-    google.maps.event.addDomListener(window, 'load', initialize);
-  </script>
-  </div>
-  <script type="text/javascript">
+<div><script type="text/javascript">
     $(document).ready(function() {
       $('.quotes').quovolver();
-    });
-  </script>
-  
+  });
+</script>
+</div>
+
+
+
+    <div class="map">
+      <script src="http://maps.googleapis.com/maps/api/js"></script>
+      <script> 
+          function initialize() {
+
+              var mapProp = {
+                center:new google.maps.LatLng(37.752191, -122.447335),
+                zoom:10,
+                mapTypeId:google.maps.MapTypeId.ROADMAP
+            };
+
+            var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+
+            for (var i = 0; i < gon.locations.length; i++) {
+                var infowindow = new google.maps.InfoWindow({
+                    content: '<a href="/locations/' + gon.locations[i].id + '">' + gon.locations[i].name + '</a>'
+                });
+                var marker = new google.maps.Marker({
+                  position: {lat: gon.locations[i].lat , lng: gon.locations[i].lng },
+                  map: map,
+                  infowindow: infowindow
+              });
+                google.maps.event.addListener(marker, 'click', function() {
+                  infowindow.setContent('<%= @locations.name %>');
+                  infowindow.open(map, this);
+              });
+            }
+        }
+        google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+</div>
+
+
 </head>
 
 
 <body>
   <div id="googleMap" style="width:1200px;height:500px;"></div>
-   <p><button><a href="/locations/new">Add New Location></button></p> 
-<div class="quotes">
+  <p><button><a href="/locations/new">Add New Location</a></button></p> 
 
-
-        <ul>
-        ...and I'm standing on the corner of Fifth and Vermouth. ~Tom Waits
-        </ul>
-
-        <ul>
-        “24 hours in a day, 24 beers in a case. Coincidence?” ~ Steven Wright
-        </ul>
-
-        <ul>
-        “A drunk man’s words are a sober man’s thoughts.” ~ Steve Fergosi
-        </ul>
-
-        <ul>
-        “A lady came up to me one day and said ‘Sir! You are drunk’, to which I replied ‘I am drunk today madam, and tomorrow I shall be sober, but you will still be ugly.” ~ Winston S. Churchill
-        </ul>
-
-        <ul>
-        “Alcohol is a way of life, alcohol is my way of life, and I aim to keep it.” ~ Homer Simpson</ul>
-
-        <ul>
-        “Alcohol may be man’s worst enemy, but the bible says love your enemy.” ~ Frank Sinatra</ul>
-
-        <ul>
-        “All is fair in love and beer.” ~ Kurt Paradis</ul>
-
-        <ul>
-        “Always do sober what you said you’d do drunk. That will teach you to keep your mouth shut.” ~ Ernest Hemingway</ul>
-
-        <ul>
-        “An intelligent man is sometimes forced to be drunk to spend time with his fools.” ~ Ernest Hemingway</ul>
-
-        <ul>
-        “Beer is proof that God loves us and wants us to be happy.” ~ Benjamin Franklin</ul>
-
-        <ul>
-        “Candy is dandy, but liquor is quicker.” ~ Ogden Nash, Hard Lines</ul>
-
-        <ul>
-        “Do I drink? Of course, I just said I was a writer.” ~ Stephen King</ul>
-
-        <ul>
-        “Drinking is fun! It makes me feel horrible and sexy!” ~ Warren Ellis</ul>
-
-        <ul>
-        “Fell in love with a beautiful blonde once. Drove me to drink. And I never had the decency to thank her.” ~ W.C. Fields</ul>
-
-        <ul>
-        “First you take a drink, then the drink takes a drink, then the drink takes you.” ~ F. Scott Fitzgerald</ul>
-
-        <ul>
-        “Good people drink good beer.” ~ Hunter S. Thompson, Fear and Loathing in Las Vegas</ul>
-
-        <ul>
-        “He that drinks fast, pays slow.” ~ Benjamin Franklin</ul>
-
-        <ul>
-        “Here’s to alcohol, the cause of, and solution to, all life’s problems.” ~ The Simpsons</ul>
-
-        <ul>
-        “I cook with wine, sometimes I even add it to the food.” ~ W.C. Fields</ul>
-
-        <ul>
-        “I drink to make other people more interesting.” ~ Ernest Hemingway</ul>
-
-        <ul>
-        “I drink too much. The last time I gave a urine sample it had an olive in it.” ~ Rodney Dangerfield</ul>
-
-        <ul>
-        “I feel bad for people who don’t drink. When they wake up in the morning, that’s as good as they’re going to feel all day.” ~ Frank Sinatra</ul>
-
-        <ul>
-        “I’m on a whisky diet. I’ve lost three days already.” ~ Tommy Cooper</ul>
-
-        <ul>
-        “If you drink, don’t drive. Don’t even putt.” ~ Dean Martin
-        </ul>   
-
-        <ul>
-        “In wine there is wisdom, in beer there is Freedom, in water there is bacteria.” ~ Benjamin Franklin</ul>
-
-        <ul>
-        “Love makes the world go round? Not at all. Whiskey makes it go round twice as fast.” ~ Compton Mackenzie
-        </ul>
-
-        <ul>
-        “There is no bad whiskey. There are only some whiskeys that aren’t as good as others.” ~ Raymond Chandler</ul>
-
-        <ul>
-        “Time is never wasted when you’re wasted all the time.” ~ Catherine Zandonella</ul>
-
-        <ul>
-        “Whisky is liquid sunshine.” ~ George Bernard Shaw</ul>
-
-        <ul>
-        “Wine is the most healthful and most hygienic of beverages.” ~ Louis Pasteur</ul>
-
-        <ul>
-        “Writer’s block is a fancy term made up by whiners so they can have an excuse to drink alcohol.” ~ Steve Martin
-        </ul>
-
-        <ul>
-        “You can learn a lot about a woman by getting smashed with her.” ~ Tom Waits</ul>
-
-        <ul>
-        24 hours in a day, 24 beers in a case. Coincidence? ~Stephen Wright
-        </ul>
-
-        <ul>
-        A fine beer may be judged with only one sip, but it’s better to be thoroughly sure. ~Czech Proverb
-        </ul>
-
-        <ul>
-        A man is a fool if he drinks before he reaches the age of 50, and a fool if he doesn’t afterward. ~Frank Lloyd Wright
-        </ul>
-
-        <ul>
-        A man's got to believe in something. I believe I'll have another drink. ~W. C. Fields
-        </ul>
-
-        <ul>
-        A woman drove me to drink and I never even had the courtesy to thank her. ~W. C. Fields
-        </ul>
-
-        <ul>
-        Actually, it only takes one drink to get me loaded. Trouble is, I can't remember if it's the thirteenth or fourteenth. ~George Burns
-        </ul>
-
-        <ul>
-        Alcohol is the anesthesia by which we endure the operation of life. ~George Bernard Shaw
-        </ul>
-
-        <ul>
-        All I ever did was supply a demand that was pretty popular. ~Al Capone (Referring to liquor during the Prohibition.)
-        </ul>
-
-        <ul>
-        Always carry a flagon of whiskey in case of snakebite and furthermore always carry a small snake. ~W.C. Fields
-        </ul>
-
-        <ul>
-        Always do sober what you said you'd do drunk. That will teach you to keep your mouth shut. ~Ernest Hemingway
-        </ul>
-
-        <ul>
-        Aye, but today's rain is tomorrow's whiskey. ~Scottish proverb
-        </ul>
-
-        <ul>
-        Beer is proof that God loves us and wants us to be happy. ~Benjamin Franklin</ul>
-
-        <ul>
-        But Champagne is not drinking. ~David Niven: When asked why he was drinking</ul>
-
-        <ul>
-        Champagne and orange juice is a great drink. The orange improves the champagne. The champagne definitely improves the orange. ~Philip, Duke of Edinburgh
-        </ul>
-
-        <ul>
-        Champagne is one of the elegant extras in life. ~Charles Dickens
-        </ul>
-
-        <ul>
-        Colder than the hairs on a polar bear’s ass! Colder than the frost on a champagne glass! ~Thomas Pynchon
-        </ul>
-
-        <ul>
-        Drink the first. Sip the second slowly. Skip the third. ~Knute Rockne
-        </ul>
-
-        <ul>
-        Drinking makes uninteresting people matter less and late at night, matter not at all. ~Lillian Hellman
-        </ul>
-
-        <ul>
-        Everyone who drinks is not a poet. Some of us drink because we're not poets. ~Dudley Moore in the movie "Arthur"
-        </ul>
-
-        <ul>
-        How do you look when I'm sober? ~Ring Lardner
-        </ul>
-
-        <ul>
-        I always wake up at the crack of ice. ~Joe E. Lewis
-        </ul>
-
-        <ul>
-        I am a drinker with a writing problem. ~Brendan Behan</ul>
-
-        <ul>
-        I don't drink anymore, on the other hand I don't drink any less either. ~W. C. Fields</ul>
-
-        <ul>
-        I drink Champagne when I win, to celebrate. And I drink Champagne when I lose, to console myself. ~Napoleon Bonaparte</ul>
-
-        <ul>
-        I drink too much. The last time I gave a urine sample it had an olive in it. ~Rodney Dangerfield</ul>
-
-        <ul>
-        I drink when I have occasion, and sometimes when I have no occasion. ~Miguel de Cervantes</ul>
-
-        <ul>
-        I envy people who drink— at least they know what to blame everything on. ~Oscar Levant</ul>
-
-        <ul>
-        I feel sorry for people who don't drink. When they wake up in the morning, that's as good as they're going to feel all day. ~Dean Martin</ul>
-
-        <ul>
-        I have taken more out of alcohol than alcohol has taken out of me. ~Sir Winston Churchill</ul>
-
-        <ul>
-        I have to think hard to name an interesting man who does not drink. ~Richard Burton</ul>
-
-        <ul>
-        I love to drink martinis. Two at the very most. Three I’m under the table. Four I’m under my host. ~Dorothy Parker</ul>
-
-        <ul>
-        I once shook hands with Pat Boone and my whole right side sobered up. ~Dean Martin</ul>
-
-        <ul>
-        I only drink Champagne when in love and when not. ~Christian Pol Roger</ul>
-
-        <ul>
-        I used to jog, but the ice cubes kept falling out of my glass. ~David Lee Roth</ul>
-
-        <ul>
-        I went on a diet, swore off drinking, and in fourteen days I lost two weeks. ~Joe E Lewis</ul>
-
-        <ul>
-        I work until beer o'clock. ~Stephen King</ul>
-
-        <ul>
-        I'm only a beer teetotaler, not a champagne teetotaler; I don't like beer. ~George Bernard Shaw</ul>
-
-        <ul>
-        I’ve never been drunk, but often I’ve been overserved. ~George Gobel</ul>
-
-        <ul>
-        If you drink, don't drive. Don't even putt. ~Dean Martin</ul>
-
-        <ul>
-        My dad was the town drunk. Usually that's not so bad, but New York City? ~Henny Youngman</ul>
-
-        <ul>
-        My dear girl, there are some things that just aren't done, such as drinking Dom Perignon '53 above the temperature of 38 degrees Fahrenheit. ~James Bond; Played By Sean Connery in the 1964 film "Goldfinger"</ul>
-
-        <ul>
-        My doctor told me to watch my drinking. Now I drink in front of a mirror. ~Rodney Dangerfield</ul>
-
-        <ul>
-        My grandmother is over eighty and still doesn't need glasses. Drinks right out of the bottle. ~Henny Youngman</ul>
-
-        <ul>
-        No nation is drunken where wine is cheap. ~Thomas Jefferson</ul>
-
-        <ul>
-        Of all the gin joints in all the towns in all the world, she walks into mine. ~Rick Blaine; Played by <ul>
-        Humphrey Bogart in the film "Casablanca"</ul>
-
-        <ul>
-        One martini is all right. Two are too many, and three are not enough. ~James Thurber</ul>
-
-        <ul>
-        One martini is just right, two is too many, three is not enough. ~James Thurber</ul>
-
-        <ul>
-        One tequila, two tequila, three tequila, floor. ~George Carlin</ul>
-
-        <ul>
-        People who drink to drown their sorrow should be told that sorrow knows how to swim. ~Ann Landers</ul>
-
-        <ul>
-        Remember gentleman, it’s not just France we’re fighting for, it’s Champagne! ~Sir Winston Churchill</ul>
-
-        <ul>
-        Show me how you drink and I will tell you who you are. ~Emile Peynaud</ul>
-
-        <ul>
-        There are more old drunkards than old physicians. ~Francois Rabelais (Gargantua)</ul>
-
-        <ul>
-        There comes a time in every woman's life when the only thing that helps is a glass of Champagne. ~Bette Davis</ul>
-
-        <ul>
-        There is no such thing as a bad whisky. Some whiskies just happen to be better than others. ~William Faulkner</ul>
-
-        <ul>
-        There should be asylums for habitual teetotalers, but they would probably relapse into teetotalism as soon as they got out. ~Samuel Butler</ul>
-
-        <ul>
-        There's nothing wrong with sobriety in moderation. ~John Candy</ul>
-
-        <ul>
-        Three be the things I shall never attain: envy, content, and sufficient Champagne. ~Dorothy Parker</ul>
-
-        <ul>
-        Too much of anything is bad, but too much Champagne is just right. ~Mark Twain</ul>
-
-        <ul>
-        We're drinking my friend, to the end of a brief episode. Make it one for my baby, and one more for the road. ~Johnny Mercer</ul>
-
-        <ul>
-        When I read about the evils of drinking, I gave up reading. ~Henny Youngman</ul>
-
-        <ul>
-        When I sell liquor, it's bootlegging. When my patrons serve it on a silver tray on Lakeshore Drive, it's hospitality. ~Al Capone</ul>
-
-        <ul>
-        Whoever drinks beer, he is quick to sleep; whoever sleeps long, does not sin; whoever does not sin, enters Heaven! Thus, let us drink beer! ~Martin Luther (Germany, 1517 A.D)</ul>
-
-        <ul>
-        Why do I drink Champagne for breakfast? Doesn't everyone? ~Noel Coward</ul>
-
-        <ul>
-        Write drunk; edit sober. ~Ernest Hemingway</ul>
-    </div>
-
-
+  <quotations></quotations>
 
 </body>
 
