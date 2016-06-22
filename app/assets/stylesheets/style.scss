@@ -9,12 +9,23 @@ body{
   text-align: center;
 }
 
+
+body label {
+color: white !important;
+
+}
+
+
 .center-information p {
 
   text-shadow: black;
   text-align: left;
 }
 
+#description {
+text-align: left;
+
+}
 
 .resume img {
   width: 1000px;
@@ -45,6 +56,13 @@ color: black;
   font-size: 30px;
   color: #C5D9A5;
 }
+
+.quovolver-box ul {
+
+
+
+}
+
 
 .quotes quovolver{
 font-size: 25px;
@@ -144,8 +162,15 @@ color: black, !important;
   color: #aaa;
 }
 
+.search-center {
+margin: 0 auto;
+display: block;
+
+}
 
 #googleMap {
+  width: 90%;
+  height:500px;
   margin: auto;
   margin-top: 40px;
 }
@@ -517,5 +542,40 @@ $dropDown       : true;
 }
 
 .quovolve-box {
-  margin-bottom: -150%;
+  // margin-bottom: -150%;
+}
+
+
+.quotes ul {
+  height: 150px !important;
+  min-height: 150px !important;
+  max-height: 150px !important;
+}
+
+
+.quotes {
+  height: 150px !important;
+  left: auto !important;
+  right: auto !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+
+}
+
+#invert-color {
+  text-shadow: 2px 2px white;
+  color: black !important;
+}
+
+body label {
+color: black;
+text-shadow: none !important;
+}
+
+.table-center {
+  margin: 0 auto;
+}
+
+#black-color {
+  color: black !important;
 }

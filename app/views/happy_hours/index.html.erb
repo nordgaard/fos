@@ -7,8 +7,8 @@
   
   <h1>Happy Hour Postings from People like You!!!</h1>
 
-  <label>Search</label>
-  <input ng-model="happyHourFilter">
+  <div class="search-center"><label class="search">Search</label>
+  <input ng-model="happyHourFilter"></div>
  <table>
    <tr>
      <th ng-click="changeFilter('location')">Name of Location</th>
@@ -26,7 +26,7 @@
      <td>{{ happy_hour.day_of_week }}</td>
      <td>{{ happy_hour.start_hour }}</td>
      <td>{{ happy_hour.end_hour }}</td>
-     <td>{{ happy_hour.hype_description }}</td>
+     <td id="description">{{ happy_hour.hype_description }}</td>
    </tr>
  </table> 
 

@@ -4,11 +4,12 @@
   </ul>
 
   <h1 class="page-title">Look at all these Drinkeries!!!</h1>
-
+<div class="search-center">
   <label>Search</label>
   <input ng-model="locationFilter">
+</div>
 <div class="table">
-  <table>
+  <table class="table-center">
     <tr>
       <th ng-click="changeFilter('name')">Location Name</th>
       <th ng-click="changeFilter('vicinity')">Address</th>
@@ -17,7 +18,7 @@
     <tr ng-repeat="location in locations | filter: locationFilter | orderBy: filterColumn">
       <td><a href="/locations/{{location.id}}">{{ location.name }}</td>
       <td>{{ location.vicinity }}</td>
-      <td>{{ location.type }}</td>
+      <td id="description">{{ location.type }}</td>
     </tr>
   </table> 
 </div>

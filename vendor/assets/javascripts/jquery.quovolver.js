@@ -146,7 +146,7 @@
       // Equal Column Heights
       function equalHeight(group) {
         var tallest = 0;
-        group.height('auto');
+        group.height('150px');
         group.each(function() {
           var thisHeight;
           if ( $(this).is(':visible') ) {
@@ -228,7 +228,7 @@
         data.current.hide();
         data.upcoming.show();
         if (o.equalHeight === false) {
-          $this.css('height', 'auto');
+          $this.css('height', '150px');
         }
       }
 
@@ -247,7 +247,7 @@
             // Fade in the upcoming item
             data.upcoming.fadeIn(o.transitionSpeed, function() {
               // Set height of container to auto
-              $this.height('auto');
+              $this.height('150px');
             });
           });
         });
