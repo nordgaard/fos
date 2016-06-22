@@ -3,7 +3,7 @@
   task :pull_data => :environment do
     @client = GooglePlaces::Client.new(ENV['MY_GOOGLE_KEY'])
     p @client
-    locations = @client.spots(37.802064, -122.429433,:types => [ 'bar', 'night_club', 'liquor_store'], :exclude => ['restaurant', 'food', 'cafe', 'bakery', 'meal-takeaway', 'meal-delivery', 'grocery-or-supermarket', 'gas-station', 'convenience_store'])
+    locations = @client.spots(40.721017, -73.989797,:types => [ 'bar', 'night_club', 'liquor_store'], :exclude => ['restaurant', 'food', 'cafe', 'bakery', 'meal-takeaway', 'meal-delivery', 'grocery-or-supermarket', 'gas-station', 'convenience_store'])
 
     p locations
 
