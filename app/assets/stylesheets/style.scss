@@ -4,6 +4,18 @@ body{
   color: #E3F8F9;
 }
 
+.center-buttons {
+
+  text-align: center;
+}
+
+.center-information p {
+
+  text-shadow: black;
+  text-align: left;
+}
+
+
 .resume img {
   width: 1000px;
   height: 1300px;
@@ -152,6 +164,7 @@ table tr {
  border-bottom: 1px solid #ddd;
  padding: 10px;
  min-height: 50px !important;
+ text-align: center;
 }
 table td {
  border-bottom: 1px solid #ddd;
@@ -501,4 +514,8 @@ $dropDown       : true;
       > a, > a:hover, > a:focus {
         color: $colHighlight;
         background-color: $bgHighlight; }}}
+}
+
+.quovolve-box {
+  margin-bottom: -150%;
 }

@@ -24,7 +24,7 @@ class HappyHoursController < ApplicationController
       flash[:success] = "You Hyped your happy hour! Keep it up!"
       redirect_to "/happy_hours/#{@happy_hour.id}"
     else
-      render :new
+      render :new   
     end
   end
 

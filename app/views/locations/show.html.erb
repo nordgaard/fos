@@ -3,15 +3,20 @@
 <head>
 
   <h1>Details of this Location</h1>
-
+<div class="center-information">
+  
   <p>Name: <%= @location.name %></p>
   <p>Address: <%= @location.vicinity %></p>
+  
+</div>
 
   </div>
 </head>
-
+<div class="center-buttons">
+  
 <button ><a href="/maps">See All Locations</a></button>
 <button ><a href="/happy_hours/new">Hype this Location</a></button>
+</div>
 
 
 <body>
@@ -39,7 +44,7 @@
 
 
           var infowindow = new google.maps.InfoWindow({
-              content: '<a href="/locations/<%= @location.name %>"><%= @location.name %></a>'
+              content: '<a href="/locations/<%= @location.id %>"><%= @location.name %></a>'
           });
           var marker = new google.maps.Marker({
             position: {lat: <%= @location.lat %>, lng: <%= @location.lng %>},

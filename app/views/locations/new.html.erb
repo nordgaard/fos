@@ -5,11 +5,11 @@
         <div class="col-sm-9">
           <div class="location_single">
             <% if @location && @location.errors.any? %>
-              <ul>
+              <div>
                 <% @location.errors.full_messages.each do |message| %>
-                  <li><%= message %></li>
+                  <ul><%= message %></ul>
                 <% end %>
-              </ul>
+              </div>
             <% end %>
             <h1>New Drinkery</h1>
 
