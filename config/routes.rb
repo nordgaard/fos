@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   resources :user_drinks
   resources :images
   resources :welcomes
+  resources :follows
 
   namespace :api do
     namespace :v1 do
@@ -22,6 +23,7 @@ Rails.application.routes.draw do
       resources :locations
       resources :user_drinks
       resources :users
+      resources :follows
     end
   end
 end

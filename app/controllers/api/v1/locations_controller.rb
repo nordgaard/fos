@@ -1,7 +1,8 @@
 class Api::V1::LocationsController < ApplicationController
+  
   def location_params
-  params.require(:location).permit(:name, :image)
-end
+    params.require(:location).permit(:name, :image)
+  end
 
 
   def index
@@ -10,11 +11,11 @@ end
    elsif params[:locations] = "happy_hours"
     @locations = Location
   end
-    
- end
+
+end
 
 
- def show
+def show
   @location = Location.find_by(id: params[:id])
   @user = current_user
 end

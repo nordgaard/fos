@@ -6,4 +6,5 @@ json.array! @locations.each do |location|
   json.vicinity location.vicinity
   json.location location.vicinity
   json.type location.types
+  json.count location.happy_hours.count
 end

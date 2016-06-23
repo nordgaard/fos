@@ -1,9 +1,14 @@
+<link href='https://fonts.googleapis.com/css?family=Bangers' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Bungee+Inline' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="css/animate.css">
+
+
 <div ng-controller="locationCtrl" ng-init="setup()"> 
   <ul>
     <li ng-repeat="error in errors">{{ error }}</li>
   </ul>
 
-  <h1 class="page-title">Look at all these Drinkeries!!!</h1>
+  <h1 class="page-title animated bounceInDown">Places to Party</h1>`
 <div class="search-center">
   <label>Search</label>
   <input ng-model="locationFilter">
@@ -13,11 +18,13 @@
     <tr>
       <th ng-click="changeFilter('name')">Location Name</th>
       <th ng-click="changeFilter('vicinity')">Address</th>
+      <th ng-click="changeFilter('count')"> Happy Hour Posts </th>
       <th ng-click="changeFilter('type')">Type of Establishment</th>
     </tr>
     <tr ng-repeat="location in locations | filter: locationFilter | orderBy: filterColumn">
       <td><a href="/locations/{{location.id}}">{{ location.name }}</td>
       <td>{{ location.vicinity }}</td>
+      <td>{{ location.count }}</td>
       <td id="description">{{ location.type }}</td>
     </tr>
   </table> 

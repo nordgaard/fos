@@ -1,5 +1,5 @@
 json.array! @happy_hours.each do |happy_hour|
-  json.location happy_hour.location.name
+  json.location happy_hour.location
   json.author happy_hour.user
   json.hype_title happy_hour.hype_title
   json.day_of_week @day_format[happy_hour.day_of_week_id].day_of_week

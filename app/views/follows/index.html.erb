@@ -1,0 +1,32 @@
+<link href='https://fonts.googleapis.com/css?family=Bangers' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Bungee+Inline' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="css/animate.css">
+
+
+<div ng-controller="followCtrl" ng-init="setup()"> 
+  <ul>
+    <li ng-repeat="error in errors">{{ error }}</li>
+  </ul>
+
+  <h1 class="page-title animated bounceInDown">Follow Your Friends</h1>
+<div class="search-center">
+  <label>Search</label>
+  <input ng-model="followFilter">
+</div>
+
+<div class="table">
+  <table class="table-center">
+    <tr>
+      <th ng-click="changeFilter('first_name')">First Name</th>
+      <th ng-click="changeFilter('last_name')">Last Name</th>
+    </tr>
+    <tr ng-repeat="follow in follows | filter: followFilter | orderBy: filterColumn">
+      <td>{{ follow.first_name }}</td>
+      <td>{{ follow.last_name }}</td>
+    </tr>
+  </table> 
+</div>
+
+</div>
+
+   <p><button><a href="/happy_hours/new">Hype a New Happy Hour</button></p> 

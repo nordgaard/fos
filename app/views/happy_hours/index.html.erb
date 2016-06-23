@@ -1,3 +1,6 @@
+<link href='https://fonts.googleapis.com/css?family=Bangers' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="css/animate.css">
+
 <div ng-controller="happyHourCtrl" ng-init="setup()"> 
 
 
@@ -5,13 +8,13 @@
     <li ng-repeat="error in errors">{{ error }}</li>
   </ul>
   
-  <h1>Happy Hour Postings from People like You!!!</h1>
+  <h1 class="page-title animated bounceInDown">Happy Hour Hypes</h1>
 
   <div class="search-center"><label class="search">Search</label>
   <input ng-model="happyHourFilter"></div>
  <table>
    <tr>
-     <th ng-click="changeFilter('location')">Name of Location</th>
+     <th ng-click="changeFilter('location.name')">Name of Location</th>
      <th ng-click="changeFilter('author.first_name')">Name of Author</th>
      <th ng-click="changeFilter('hype_title')">Posting Title</th>
      <th ng-click="changeFilter('day_of_week')">Day of the Week</th>
@@ -20,7 +23,7 @@
      <th ng-click="changeFilter('hype_description')">Description</th>
      </tr>
    <tr ng-repeat="happy_hour in happy_hours | filter: happyHourFilter | orderBy: filterColumn">
-     <td><a href ="/locations/{{happy_hour.location_id}}" >{{ happy_hour.location}}</a></td>
+     <td><a href ="/locations/{{happy_hour.location_id}}" >{{ happy_hour.location.name}}</a></td>
      <td>{{ happy_hour.author.first_name}}</td>
      <td>{{ happy_hour.hype_title }}</td>
      <td>{{ happy_hour.day_of_week }}</td>

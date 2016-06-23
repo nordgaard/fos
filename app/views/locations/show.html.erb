@@ -1,8 +1,10 @@
+<link href='https://fonts.googleapis.com/css?family=Bangers' rel='stylesheet' type='text/css'>
+
   <!DOCTYPE html>
 <html>
 <head>
 
-  <h1>Details of this Location</h1>
+  <h1 class="page-title animated bounceInDown">Details of this Location</h1>
 <div class="center-information">
   
   <p>Name: <%= @location.name %></p>
@@ -28,9 +30,8 @@
 
 
   <div class="map">
-  <script src="http://maps.googleapis.com/maps/api/js"></script>
-<!--   <script src="https://maps.googleapis.com/maps/api/js?key=#{ENV['MY_GOOGLE_KEY']}&callback=initMap"
-    async defer></script> -->
+  <script src="http://maps.googleapis.com/maps/api/js?key=<%= ENV['MY_GOOGLE_KEY'] %>"></script>
+
   <script>
   function initialize() {
 

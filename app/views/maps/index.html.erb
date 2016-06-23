@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <html>
 <link href='https://fonts.googleapis.com/css?family=Permanent+Marker' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Bangers' rel='stylesheet' type='text/css'>
 <head>
     <h1> Current Drinkeries Map </h1>
+
+  <div id="googleMap"></div>
+  <p><button><a href="/locations/new">Add New Location</a></button></p> 
 
     <div><script type="text/javascript">
         $(document).ready(function() {
@@ -11,7 +15,7 @@
   </script>
   
 </div>
-
+  <script src="http://maps.googleapis.com/maps/api/js?key=<%= ENV['MY_GOOGLE_KEY'] %>"></script>
 
 <div class="map">
   <script src="http://maps.googleapis.com/maps/api/js"></script>
@@ -51,9 +55,6 @@
 </head>
 
 <body>
-  <div id="googleMap"></div>
-  <p><button><a href="/locations/new">Add New Location</a></button></p> 
-
 
 <quotations></quotations>
 </body>
