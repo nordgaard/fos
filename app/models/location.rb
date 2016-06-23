@@ -22,6 +22,15 @@ class Location < ActiveRecord::Base
       errors.add(:location, "You have already added this location, pick another")
     end
   end
+
+  def flatten_string_array
+    if types
+      word = types.gsub!(/[^0-9A-Za-z,]/, '').split(",").join(", ")
+      p word.slice!(0..-1)
+      
+    end
+  end
+
 end
 
 # def delete_update_is_admin
