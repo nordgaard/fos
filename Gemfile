@@ -24,6 +24,8 @@ gem 'gon'
 gem 'dotenv-rails', :groups => [:development, :test]
 gem 'angular-rails-templates'
 gem 'rails_12factor', group: :production
+gem 'rspec-rails'
+gem 'factory_girl_rails'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
