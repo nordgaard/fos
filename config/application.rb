@@ -5,6 +5,10 @@ require 'rails/all'
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
+Dotenv::Railtie.load
+
+MY_GOOGLE_KEY = ENV['MY_GOOGLE_KEY']
+
 
 module Fos
   class Application < Rails::Application
