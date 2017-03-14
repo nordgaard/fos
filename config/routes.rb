@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   resources :user_drinks
   resources :images
   resources :welcomes
+  resources :maps
 
   namespace :api do
     namespace :v1 do
