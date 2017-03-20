@@ -80,6 +80,6 @@ test:
 #
 production:
   <<: *default
-  database: fos_production
-  username: fos
+  database: shielded-beach-98655_production
+  username: shielded-beach-98655
   password: <%= ENV['FOS_DATABASE_PASSWORD'] %>
