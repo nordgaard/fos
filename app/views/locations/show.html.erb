@@ -1,23 +1,23 @@
 <link href='https://fonts.googleapis.com/css?family=Bangers' rel='stylesheet' type='text/css'>
 
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 
   <h1 class="page-title animated bounceInDown">Details of this Location</h1>
-<div class="center-information">
-  
-  <p>Name: <%= @location.name %></p>
-  <p>Address: <%= @location.vicinity %></p>
-  
-</div>
-
+  <div class="center-information">
+    
+    <p>Name: <%= @location.name %></p>
+    <p>Address: <%= @location.vicinity %></p>
+    
   </div>
+
+</div>
 </head>
 <div class="center-buttons">
   
-<button ><a href="/maps">See All Locations</a></button>
-<button ><a href="/happy_hours/new">Hype this Location</a></button>
+  <button ><a href="/maps">See All Locations</a></button>
+  <button ><a href="/happy_hours/new">Hype this Location</a></button>
 </div>
 
 
@@ -29,33 +29,33 @@
 
 
 
-  <div class="map">
-  <script src="http://maps.googleapis.com/maps/api/js?key=<%= ENV['MY_GOOGLE_KEY'] %>"></script>
-
+<div class="map">
+  <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=<%= ENV['MY_GOOGLE_KEY'] %>">
+  </script>
   <script>
-  function initialize() {
+    function initialize() {
 
-        var mapProp = {
-          center:new google.maps.LatLng(<%= @location.lat %>,<%= @location.lng %>),
-          zoom:10,
-          mapTypeId:google.maps.MapTypeId.ROADMAP
-        };
+      var mapProp = {
+        center:new google.maps.LatLng(<%= @location.lat %>,<%= @location.lng %>),
+        zoom:10,
+        mapTypeId:google.maps.MapTypeId.ROADMAP
+      };
 
-        var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+      var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
 
 
-          var infowindow = new google.maps.InfoWindow({
-              content: '<a href="/locations/<%= @location.id %>"><%= @location.name %></a>'
-          });
-          var marker = new google.maps.Marker({
-            position: {lat: <%= @location.lat %>, lng: <%= @location.lng %>},
-            map: map,
-            infowindow: infowindow
-          });
-          google.maps.event.addListener(marker, 'click', function() {
-            this.infowindow.open(map, this);
-          });
+      var infowindow = new google.maps.InfoWindow({
+        content: '<a href="/locations/<%= @location.id %>"><%= @location.name %></a>'
+      });
+      var marker = new google.maps.Marker({
+        position: {lat: <%= @location.lat %>, lng: <%= @location.lng %>},
+        map: map,
+        infowindow: infowindow
+      });
+      google.maps.event.addListener(marker, 'click', function() {
+        this.infowindow.open(map, this);
+      });
 
-      }
-      google.maps.event.addDomListener(window, 'load', initialize);
+    }
+    google.maps.event.addDomListener(window, 'load', initialize);
   </script>   
